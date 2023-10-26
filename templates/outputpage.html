@@ -12,12 +12,13 @@
     <script src="https://kit.fontawesome.com/20c5629a29.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="{% static 'css/dropDown.css' %}">
 
+
 {% endblock %}
 
 {% block body %}
-    <script src="{% static  'js/outputpage.js' %}"></script>
-    <script src="{% static 'js/loginSignup.js' %}"></script>
-    
+
+<script src="{% static  'js/outputpage.js' %}"></script>
+<script src="{% static 'js/loginSignup.js' %}"></script>
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
@@ -54,119 +55,33 @@
         </div>
     </nav>
 
-     <!--Login Section-->
-     <div class="login-popup" id="loginForm">
-        <div class="close-button" onclick="closeLoginForm()"><i class="fa-solid fa-xmark fa-xl" style="color: #ffffff;"></i></div>
-        <div class="login-main-container">
-            <div class="center">
-                <div class="container">
-                    <div class="row">
-                        <div class="text-center d-none col-md-5  mt-5   d-md-block">
-                            <img src="https://live.staticflickr.com/65535/53217076980_d733d6cd73_w.jpg" class="ayurbharat-logo">
-                        </div>
-                        <div class="container col-sm-11 col-md-6">
-                            <div class="login-container ">
-                                <h1 class="mb-3">Login</h1>
-                                <form action="/login" method="post" onsubmit="return validateLoginForm()">
-                                    <div class="mb-3">
-                                        <label for="loginEmail">Email</label>
-                                        <input type="text" class="form-control" id="loginEmail" name="loginEmail" required>
-                                        <p class="error-message" id="loginEmailError"></p>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="loginPassword">Password</label>
-                                        <input type="password" class="form-control" id="loginPassword" name="loginPassword" required>
-                                        <p class="error-message" id="loginPasswordError"></p>
-                                    </div>
-                                    <div class="text-center">
-                                        <button class="btn btn-primary">Login</button>
-                                    </div>
-                                    <button class="open-signup-button" onclick="openSignupForm()">Open Signup Form</button>
-                                    <a href="">Forgot Password? </a>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
 
-
-
-
-    </div>
-    <!--Signup Section-->
-    <div class="signup-popup" id="signupForm">
-        <div class="close-button" onclick="closeSignupForm()"><i class="fa-solid fa-xmark fa-xl" style="color: #ffffff;"></i></div>
-        <div class="login-main-container">
-            <div class="center">
-                <div class="container">
-                    <div class="row">
-                        <div class="text-center d-none col-md-5  mt-5   d-md-block">
-                            <img src="https://live.staticflickr.com/65535/53217076980_d733d6cd73_w.jpg" class="ayurbharat-logo">
-                        </div>
-                       <div class="container col-sm-11 col-md-6">
-                            <div class="login-container ">
-                                <h1 class="mb-3">Signup</h1>
-                                <form action="/signup" method="post" onsubmit="return validateSignupForm()">
-                                    <div class="mb-3">
-                                        <label for="signupName">Name</label>
-                                        <input type="text" class="form-control" id="signupName" name="signupName" required>
-                                        <p class="error-message" id="signupNameError"></p>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="signupEmail">Email</label>
-                                        <input type="text" class="form-control" id="signupEmail" name="signupEmail" required>
-                                        <p class="error-message" id="signupEmailError"></p>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="signupPassword">Password</label>
-                                        <input type="password" class="form-control" id="signupPassword" name="signupPassword" required>
-                                        <p class="error-message" id="signupPasswordError"></p>
-                                    </div>
-                                    <div class="text-center">
-                                        <button class="btn btn-primary">Signup</button>
-                                    </div>
-                                    <button class="open-login-button" onclick="openLoginForm()">Open Login Form</button>
-                                    <a href="">Forgot Password? </a>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <!-- input section-->
     <div class="banner-section-bg-container d-flex justify-content-center flex-column mb-4">
         
         <div class="container mt-5">
+        {% for prediction in predictions %}
 
-
-
-
-        <div class="banner-section-bg-container d-flex justify-content-center flex-column mb-4">
-            <h2 style="color: white;"> Symptoms :  </h2>
+        <div class=" d-flex justify-content-center flex-column mb-4">
+            <h2 style="color: white;"> Symptoms :  {{ prediction['Symptom'] }} </h2>
             <div class="container">
                 <div class="row">
-                    
-    
                     <div class="col-12 col-md-8">
                         <div class=" mb-3">
                             <div class="p-4 rounded-4 bg-light">
-                                <h5 class="text-center mb-4">Disease Name:  prediction['Disease_Ayurvedic_Name'] </h5>
+                                <h5 class="text-center mb-4">Disease Name:  {{ prediction['disease_name'] }}</h5>
     
                                 <!-- Medication Recommended -->
                                 <hr class="my-4">
                                 <h6 class="mb-3"><strong>Disease Description</strong></h6>
-                                <p> prediction['Description'] </p>
+                                <p> {{ prediction['Description'] }} </p>
     
                                 <!-- Items Required for Formulation -->
                                 <hr class="my-4">
                                 <h6 class="mb-3"><strong>Remedy</strong></h6>
                                 <p>
-                                    <a href="https://www.ayurtimes.com/?s=&q= prediction['Ayurvedic_Remedy'] " target="_blank"> prediction['Ayurvedic_Remedy'] </a>,
+                                    <a href="https://www.ayurtimes.com/?s=&q= prediction['Ayurvedic_Remedy'] " target="_blank"> {{ prediction['Remedy'] }} </a>,
                                 </p>
     
                                 <!-- Steps Required for Preparation of Medication -->
@@ -191,6 +106,7 @@
                                     <span class="quantity">0</span>
                                     <button class="quantity-button plus align-right">+</button>
                                 </div>
+
                                 <button class="custom-outline-button1" id="addToCart">Add to cart</button>
                                 <button class="custom-outline-button1 align-right" id="buyNow">Buy Now</button>
                             </div>
@@ -203,12 +119,20 @@
             </div>
         </div>
 
+        {% endfor %}
+
 
 
 
        
         </div>
-      <a href="{% url 'remedypage' %}"><button class="btn btn-primary" id="tryNow">Get Formulation Now!</button></a>
+        <div class="">
+        <div class="d-flex flex-column">
+      <a href="{% url 'remedypage' %}"><button class="btn btn-primary mb-3" id="getFormulation">Get Formulation Now!</button></a>
+      <a href="{% url 'remedypage' %}"><button class="btn btn-primary" id="doctorConsultation">Consult a doctor!</button></a>
+        </div>
+    </div>
+
     </div>
 
     <!-- why choose us section -->
