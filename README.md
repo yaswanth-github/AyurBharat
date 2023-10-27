@@ -1,1 +1,1 @@
-# AyurBharat_sqlite Changes By Komal
+# AyurBharat_sqlite
