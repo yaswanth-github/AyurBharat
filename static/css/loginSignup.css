@@ -67,16 +67,16 @@
 }   
 
 .login-main-container {
-   
+    background-image: url("https://live.staticflickr.com/65535/53216717231_923f1abb0e_b.jpg");
+    background-size: cover;
     background: rgba(0, 0, 0, 0.5);
 }
-
 
 .center {
     display: flex;
     justify-content: center;
     align-items: center;
-height: 100vh;
+height: 90vh;
 }
 
 .text-color {
@@ -97,5 +97,6 @@ height: 100vh;
     width: 100%;
     height: 2.5rem;
 }
+
 
 
