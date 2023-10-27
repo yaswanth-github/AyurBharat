@@ -61,21 +61,20 @@
     <div class="banner-section-bg-container d-flex justify-content-center flex-column mb-4">
         
         <div class="container mt-5">
-        {% for prediction in predictions %}
 
         <div class=" d-flex justify-content-center flex-column mb-4">
-            <h2 style="color: white;"> Symptoms :  {{ prediction['Symptom'] }} </h2>
+            <h2 style="color: white;"> Symptoms :  {{ Symptoms }} </h2>
             <div class="container">
                 <div class="row">
                     <div class="col-12 col-md-8">
                         <div class=" mb-3">
                             <div class="p-4 rounded-4 bg-light">
-                                <h5 class="text-center mb-4">Disease Name:  {{ prediction['disease_name'] }}</h5>
+                                <h5 class="text-center mb-4">Disease Name:  {{ disease_name }} </h5>
     
                                 <!-- Medication Recommended -->
                                 <hr class="my-4">
                                 <h6 class="mb-3"><strong>Disease Description</strong></h6>
-                                <p> {{ prediction['Description'] }} </p>
+                                <p> {{ Description }} </p>
     
                                 <!-- Items Required for Formulation -->
                                 <hr class="my-4">
@@ -118,11 +117,6 @@
     
             </div>
         </div>
-
-        {% endfor %}
-
-
-
 
        
         </div>
