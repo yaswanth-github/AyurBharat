@@ -7,14 +7,14 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://kit.fontawesome.com/2bc02a5da9.js" crossorigin="anonymous"></script>   
     <link rel="stylesheet" type="text/css" href="{% static 'css/inputpage.css' %}">
-    
+    <script src="{% static 'js/inputpage.js' %}"></script>
+    <script src="{% static 'js/loginSignup.js' %}"></script>
     <link rel="stylesheet" type="text/css" href="{% static 'css/loginSignup.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/dropDown.css' %}">
 {% endblock %}
 
 {% block body %}
-<script src="{% static 'js/inputpage.js' %}"></script>
-    <script src="{% static 'js/loginSignup.js' %}"></script>
+
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
@@ -50,32 +50,102 @@
             </div>
         </div>
     </nav>
+ <!--Login Section-->
+ <div class="login-popup" id="loginForm">
+    <div class="close-button" onclick="closeLoginForm()"><i class="fa-solid fa-xmark fa-xl" style="color: #ffffff;"></i></div>
+    <div class="login-main-container">
+        <div class="center">
+            <div class="container">
+                <div class="row">
+                    <div class="text-center d-none col-md-5  mt-5   d-md-block">
+                        <img src="https://live.staticflickr.com/65535/53217076980_d733d6cd73_w.jpg" class="ayurbharat-logo">
+                    </div>
+                    <div class="container col-sm-11 col-md-6">
+                        <div class="login-container ">
+                            <h1 class="mb-3">Login</h1>
+                            <form action="/login" method="post" onsubmit="return validateLoginForm()">
+                                <div class="mb-3">
+                                    <label for="loginEmail">Email</label>
+                                    <input type="text" class="form-control" id="loginEmail" name="loginEmail" required>
+                                    <p class="error-message" id="loginEmailError"></p>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="loginPassword">Password</label>
+                                    <input type="password" class="form-control" id="loginPassword" name="loginPassword" required>
+                                    <p class="error-message" id="loginPasswordError"></p>
+                                </div>
+                                <div class="text-center">
+                                    <button class="btn btn-primary">Login</button>
+                                </div>
+                                <button class="open-signup-button" onclick="openSignupForm()">Open Signup Form</button>
+                                <a href="">Forgot Password? </a>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
+
+
+
+</div>
+<!--Signup Section-->
+<div class="signup-popup" id="signupForm">
+    <div class="close-button" onclick="closeSignupForm()"><i class="fa-solid fa-xmark fa-xl" style="color: #ffffff;"></i></div>
+    <div class="login-main-container">
+        <div class="center">
+            <div class="container">
+                <div class="row">
+                    <div class="text-center d-none col-md-5  mt-5   d-md-block">
+                        <img src="https://live.staticflickr.com/65535/53217076980_d733d6cd73_w.jpg" class="ayurbharat-logo">
+                    </div>
+                   <div class="container col-sm-11 col-md-6">
+                        <div class="login-container ">
+                            <h1 class="mb-3">Signup</h1>
+                            <form action="/signup" method="post" onsubmit="return validateSignupForm()">
+                                <div class="mb-3">
+                                    <label for="signupName">Name</label>
+                                    <input type="text" class="form-control" id="signupName" name="signupName" required>
+                                    <p class="error-message" id="signupNameError"></p>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="signupEmail">Email</label>
+                                    <input type="text" class="form-control" id="signupEmail" name="signupEmail" required>
+                                    <p class="error-message" id="signupEmailError"></p>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="signupPassword">Password</label>
+                                    <input type="password" class="form-control" id="signupPassword" name="signupPassword" required>
+                                    <p class="error-message" id="signupPasswordError"></p>
+                                </div>
+                                <div class="text-center">
+                                    <button class="btn btn-primary">Signup</button>
+                                </div>
+                                <button class="open-login-button" onclick="openLoginForm()">Open Login Form</button>
+                                <a href="">Forgot Password? </a>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 
     <!-- input section-->
     <div class="banner-section-bg-container d-flex justify-content-center flex-column mb-4">
-       
+        <div class="text-center">
+            <h1 class="banner-heading mb-3">Ayur Bharat</h1>
+            <p class="banner-caption mb-4">One stop solution for your problem</p>
+        </div>
 
         <div class="container">
             <form class="subscribeForm" id="subscribeForm" method='POST' action="{% url 'outputpage' %}">
-                {% csrf_token %}
                 <h1 class="form-heading">Know your disease</h1>
                 <!-- <p>Predictions: {{ predictions }}</p> -->
-                <div class="mb-3">
-                    <h1 class="labelText">Checkup for</h1>
-                    <div class="d-flex flex-column">
-                    <div>
-                        <input type="radio" name="person" id="myself" value="myself" checked />
-                    <label for="myself">Myself</label>
-                    </div>
-                    <div>
-                        <input type="radio" name="person" id="SomeoneElse" value="SomeoneElse" class="ml-2"/>
-                    <label for="SomeoneElse">Someone Else</label>
-                    </div>
-                </div>
-                    
-                  </div>
                 <div class="mb-3">
                     <label for="name" class="labelText">Your Name</label>
                     <input type="text" class="form-control" id="name" name='name' required/>
@@ -92,8 +162,6 @@
                     <label for="genderMale">Male</label>
                     <input type="radio" name="gender" id="genderFemale" value="Female" class="ml-2" />
                     <label for="genderFemale">Female</label>
-                    <input type="radio" name="gender" id="genderOther" value="Other"/>
-                    <label for="genderOther">Other</label>
                 </div>
                 <div class="mb-3">
                     <label for="status">Region</label>
