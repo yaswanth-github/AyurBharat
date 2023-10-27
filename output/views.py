@@ -1,23 +1,33 @@
 # accounts/views.py
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 def inputpage(request):
-    if request.method == 'POST' :
-        disease = request.POST['disease']
-        symptoms = request.POST['symptoms']
-        Description = 'This is an trail Description'
-        Remedy = 'This is a remedy'
-
-        # for trail base
-        if  (not disease ):
-            disease = 'This is trail disease name'
-            
-        predictions = []        
-        predit = {'disease_name': disease , 'Symptoms': symptoms , 'Description' : Description , 'Remedy': Remedy}
-        predictions.append(predit)
-
-        return render(request, 'outputpage.html', predictions)
     return render(request, 'inputpage.html')
 
 def outputpage(request):
-    return render(request, 'outputpage.html')
+    if request.method == 'POST' :
+        symptoms = 'This is the trail symptoms'
+        disease = 'This is trail disease name'
+        Description = 'This is an trail Description'
+        Remedy = 'This is a remedy'
+
+        if  (request.POST.get('disease')):
+            disease = request.POST['disease']
+
+        if (request.POST.get('symptoms')):
+            symptoms = request.POST['symptoms']
+            
+        # predictions = []        
+        # predit = {'disease_name': disease , 'Symptoms': symptoms , 'Description' : Description , 'Remedy': Remedy}
+        # predictions.append(predit)
+
+        return render(request, 'outputpage.html', {'disease_name': disease , 'Symptoms': symptoms , 'Description' : Description , 'Remedy': Remedy} )
+    
+    return redirect( 'inputpage')
+
+
+def dmodel(request):
+    return render(request, '3Dmodel.html')
+
+def remedypage(request):
+    return render(request, 'remedypage.html')
