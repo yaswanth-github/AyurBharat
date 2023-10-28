@@ -1,6 +1,5 @@
 django
 scikit-learn
-sklearn
 pandas
 tfidf
 nltk
