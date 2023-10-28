@@ -1,4 +1,6 @@
-import * as THREE from 'https://cdn.skypack.dev/three';
+import * as THREE from 'three';
+
+
 
 
 window.onload = function () {
@@ -21,11 +23,8 @@ window.onload = function () {
 
         function animate() {
             requestAnimationFrame(animate);
-
-            // Add any model animations or interactions here
             model.rotation.x += 0.01;
             model.rotation.y += 0.01;
-
             renderer.render(scene, camera);
         }
     });
