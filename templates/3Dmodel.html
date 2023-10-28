@@ -8,6 +8,7 @@
 <script src="https://app.wotnot.io/chat-widget/7aShk3YYCcWF173117878006Ky5zIFVu.js" defer></script>
 <script src="https://kit.fontawesome.com/2bc02a5da9.js" crossorigin="anonymous"></script>  
 
+
 <link rel="stylesheet" type="text/css" href="{% static 'css/homepage.css' %}">
 <link rel="stylesheet" type="text/css" href="{% static 'css/dropDown.css' %}">
 <link rel="stylesheet" type="text/css" href="{% static 'css/loginSignup.css' %}">
@@ -16,8 +17,12 @@
 
 {% block body %}
 <script src="{% static 'js/loginSignup.js' %}"></script> 
-<script src="{% static 'js/3Dmodel.js' %}"></script> 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script> <!--three.js-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/loaders/GLTFLoader.js"></script>
+
+
+
+<script type="module" src="{% static 'js/3Dmodel.js' %}"></script> 
 <!-- navbar -->
 <nav class="navbar navbar-expand-lg">
     <div class="container-fluid">

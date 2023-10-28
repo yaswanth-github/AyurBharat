@@ -58,18 +58,45 @@
 
 
 <!-- text section -->
-    <div class="banner-section-bg-container d-flex justify-content-center flex-column">
-        <div class="text-center">
-            <h1 class="banner-heading mb-3">Ayur Bharat</h1>
-            <p class="banner-caption mb-4">One stop solution for your problem</p>
-            <div class="msg" style="color: white;">{{ msg }}</div>
-            <a href="{% url 'inputpage' %}"><button class="custom-outline-button" id="tryNow">Try Now!</button></a>
 
-            <!-- Start of ChatBot (www.chatbot.com) code -->
-            <script src='https://app.wotnot.io/chat-widget/7aShk3YYCcWF173117878006Ky5zIFVu.js' defer></script>
-            <!-- End of ChatBot code -->
+
+
+    <div id="carouselExampleFade" class="carousel slide carousel-fade">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="banner-section-bg-container d-flex justify-content-center flex-column">
+                <div class="text-center">
+                    <h1 class="banner-heading mb-3">Ayur Bharat</h1>
+                    <p class="banner-caption mb-4">One stop solution for your problem</p>
+                    <div class="msg" style="color: white;">{{ msg }}</div>
+                    <a href="{% url 'inputpage' %}"><button class="custom-outline-button" id="tryNow">Try Now!</button></a>
+        
+                    <!-- Start of ChatBot (www.chatbot.com) code -->
+                    <script src='https://app.wotnot.io/chat-widget/7aShk3YYCcWF173117878006Ky5zIFVu.js' defer></script>
+                    <!-- End of ChatBot code -->
+                </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="..." class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="..." class="d-block w-100" alt="...">
+          </div>
         </div>
-    </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
+
+
+
 
 <!-- why choose us section -->
     <div class="wcu-section pt-5 pb-5" id="wcuSection">

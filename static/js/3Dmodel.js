@@ -1,29 +1,32 @@
-// 3Dmodel.js
+import * as THREE from 'https://cdn.skypack.dev/three';
 
-const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-camera.position.z = 5;
 
-const renderer = new THREE.WebGLRenderer();
-renderer.setSize(window.innerWidth, window.innerHeight);
-document.getElementById('model-container').appendChild(renderer.domElement);
+window.onload = function () {
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    camera.position.z = 5;
 
-const loader = new THREE.GLTFLoader();
+    const renderer = new THREE.WebGLRenderer();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    document.getElementById('model-container').appendChild(renderer.domElement);
 
-// Load the .glb model and add it to the scene
-loader.load("{% static 'models/3dModelExpV2.glb' %}", (gltf) => {
-    const model = gltf.scene;
-    scene.add(model);
+    const loader = new THREE.GLTFLoader();
 
-    animate(); // Start the rendering loop
+    // Load the .glb model and add it to the scene
+    loader.load("{% static 'models/3dModelExpV2.glb' %}", (gltf) => {
+        const model = gltf.scene;
+        scene.add(model);
 
-    function animate() {
-        requestAnimationFrame(animate);
+        animate(); // Start the rendering loop
 
-        // Add any model animations or interactions here
-        model.rotation.x += 0.01;
-        model.rotation.y += 0.01;
+        function animate() {
+            requestAnimationFrame(animate);
 
-        renderer.render(scene, camera);
-    }
-});
+            // Add any model animations or interactions here
+            model.rotation.x += 0.01;
+            model.rotation.y += 0.01;
+
+            renderer.render(scene, camera);
+        }
+    });
+};
