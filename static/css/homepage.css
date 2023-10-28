@@ -7,6 +7,19 @@
     height: 70vh;
 }
 
+.banner-section-bg-container2 {
+    background-image: URL("https://https://live.staticflickr.com/65535/53292166389_9ea0dfbd2c_h.jpg");
+    background-size: cover;
+    height: 70vh;
+}
+.banner-section-bg-container3 {
+    background-image: URL("https://live.staticflickr.com/65535/53291793286_c9a74b43b8_h.jpg");
+    background-size: cover;
+    height: 70vh;
+}
+
+
+
 .banner-heading {
     color: white;
     font-family: "Roboto";
