@@ -16,6 +16,7 @@
 
 {% block body %}
 <script src="{% static 'js/loginSignup.js' %}"></script> 
+<script src="{% static 'js/3Dmodel.js' %}"></script> 
 <!-- navbar -->
 <nav class="navbar navbar-expand-lg">
     <div class="container-fluid">
@@ -38,9 +39,6 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'inputpage' %}">Marketplace</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'dmodel' %}">3D Model</a> <!--need to link 3D model page here-->
-                </li>
                 <li class="dropdown">
                     <img src="https://live.staticflickr.com/65535/53283340452_0c10341374.jpg" alt="Image" width="50" height="50" id="image-trigger">
                     <div class="dropdown-content">
@@ -50,6 +48,7 @@
 
                 </div>
                 </li>
+                
             </ul>
         </div>
     </div>
@@ -72,75 +71,7 @@
     </div>
 
 <!-- why choose us section -->
-    <div class="wcu-section pt-5 pb-5" id="wcuSection">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <h1 class="wcu-section-heading">Why Choose Us?</h1>
-                    <p class="wcu-section-description">
-                        We analyse your epidemic accurately and give Remidies accordingly through our Machine learning model.
-                    </p>
-                </div>
-                <div class="col-12 col-md-4">
-                    <div class="wcu-card p-3 mb-3">
-                        <i class="fas fa-brain fa-4x"></i>
-                        <h1 class="wcu-card-title mt-3">Ayurvedic Recommendations</h1>
-                        <p class="wcu-card-description">
-                            The system provides a list of Ayurvedic recommendations based on the user's
-                            search query.
-                        </p>
-                    </div>
-                </div>
-                <div class="col-12 col-md-4 ">
-                    <div class="wcu-card p-3 mb-3">
-                        <i class="fas fa-info fa-4x"></i>
-                        <h1 class="wcu-card-title mt-3">Detailed Formulation</h1>
-                        <p class="wcu-card-description">
-                            Users can access detailed formulation of recommended remedy,
-                            upon subscription ensuring detailed understanding.
-                        </p>
-                    </div>
-                </div>
-                <div class="col-12 col-md-4">
-                    <div class="wcu-card p-3 mb-3">
-                        <i class="fas fa-tag fa-4x"></i>
-                        <h1 class="wcu-card-title mt-3">Made Customised</h1>
-                        <p class="wcu-card-description">
-                            Users can even buy the remedy from us by payment which is available on
-                            multiple options such as Cash on Delivery and Online transaction.
-                        </p>
-                    </div>
-                </div>
-                <div class="col-12 col-md-4">
-                    <div class="wcu-card p-3 mb-3">
-                        <i class="fas fa-robot fa-4x"></i>
-                        <h1 class="wcu-card-title mt-3">Customer Support</h1>
-                        <p class="wcu-card-description">
-                            They can track their order. Take help using our chat bot and manby more.
-                        </p>
-                    </div>
-                </div>
-                <div class="col-12 col-md-4">
-                    <div class="wcu-card p-3 mb-3">
-                        <i class="fas fa-question fa-4x"></i>
-                        <h1 class="wcu-card-title mt-3">Know why?</h1>
-                        <p class="wcu-card-description">
-                            Know detailed cause of illness and get tips to avoid in case of minor illness.
-                        </p>
-                    </div>
-                </div>
-                <div class="col-12 col-md-4">
-                    <div class="wcu-card p-3 mb-3">
-                        <i class="fas fa-user-md fa-4x"></i>
-                        <h1 class="wcu-card-title mt-3">Expert Consultation</h1>
-                        <p class="wcu-card-description">
-                            Get one on one expert opinion from famous ayurvedic doctor based on your illness sevearity.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    
 
 <!-- footer section-->
     <div class="pt-4 footer-container footer-text">
