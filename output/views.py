@@ -4,7 +4,7 @@ import joblib
 from nltk.corpus import stopwords
 
 
-def model_output():
+def model_output(user_symptoms):
     # Load the combined models from the joblib file
     combined_models = joblib.load("{ static 'models/ml_model.joblib' } ")
 
@@ -39,20 +39,14 @@ def model_output():
     ingredients_prediction = clf_ingredients.predict(user_input_vectorized)[0]
     preparation_prediction = clf_preparation.predict(user_input_vectorized)[0]
 
-
-    # Print the predictions
-    print(" ")
-    print("Predicted Disease:", predicted_disease)
-    print(" ")
-    print("Description for Disease:", description_prediction)
-    print(" ")
-    print("Predicted Symptoms:", symptoms_prediction)
-    print(" ")
-    print("Predicted Remedy:", remedy_prediction)
-    print(" ")
-    print("Predicted Ingredients:", ingredients_prediction)
-    print(" ")
-    print("Predicted Preparation:", preparation_prediction)
+    return {
+        'predicted_disease' : predicted_disease,
+        'description_prediction' : description_prediction,
+        'symptoms_prediction' : symptoms_prediction,
+        'remedy_prediction' : remedy_prediction,
+        'ingredients_prediction' : ingredients_prediction,
+        'preparation_prediction' : preparation_prediction
+    }
 
 
 def inputpage(request):
@@ -66,7 +60,7 @@ def outputpage(request):
         Remedy = 'This is a remedy'
 
         if  (request.POST.get('disease')):
-        #     disease = request.POST['disease']
+            disease = request.POST['disease']
 
         if (request.POST.get('symptoms')):
             symptoms = request.POST['symptoms']
