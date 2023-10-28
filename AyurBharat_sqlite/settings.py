@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure--0biwnkl9p3=z0k0_n!rmu6mr2q&4!*@ouo^y#&$qkdq(1+v1f
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*','https://ayurbharat-vha7.onrender.com/']
 PORT = int(os.environ.get("PORT", 8000))
 
 
