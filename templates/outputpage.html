@@ -81,7 +81,7 @@
                                 <h6 class="mb-3"><strong>Symptoms</strong></h6>
                                 <p> {{ prediction.symptoms_prediction }} </p>
     
-                                <!-- Medication Recommended -->
+                                <!-- Disease Description -->
                                 <hr class="my-4">
                                 <h6 class="mb-3"><strong>Disease Description</strong></h6>
                                 <p> {{ prediction.description_prediction }} </p>
@@ -92,11 +92,6 @@
                                 <p>
                                     <a href="https://www.ayurtimes.com/?s=&q= prediction['Ayurvedic_Remedy'] " target="_blank"> {{ prediction.remedy_prediction }} </a>
                                 </p>
-    
-                                <!-- Steps Required for Preparation of Medication -->
-                                <!-- <hr class="my-4">
-                                <h6 class="mb-3"><strong>Steps Required for Preparation of Medication:</strong></h6>
-                                <p>Steps details here</p> -->
                             </div>
                             {% endfor %} 
 

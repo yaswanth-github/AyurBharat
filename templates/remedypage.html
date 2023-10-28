@@ -58,32 +58,45 @@
         </div>
         <div class="container mt-5">
 
-            <table class="table table-striped m-4 rounded-1">
+            <div class="p-4 rounded-4 bg-light">
+                <!-- Predicted disease -->
+                <h5 class="text-center mb-4">Disease Name:  {{ prediction.disease_prediction }} </h5>
 
-                <h2 style="color: white;"> Symptoms : Symptoms given </h2>
-                <thead class="thead-dark">
-                    <tr>
-                        <th scope="col" class="col-auto text-center" style="width: 300px;">Disease Name</th>
-                        <td></td>
-                    </tr>
-                    <tr>
+                <!-- Symptoms -->
+                <hr class="my-4">
+                <h6 class="mb-3"><strong>Symptoms</strong></h6>
+                <p> {{ prediction.symptoms_prediction }} </p>
 
-                        <th scope="col" class="col-auto text-center" style="width: 300px; ">Medication Recommended</th>
-                        <td></td>
+                <!-- Medication Recommended -->
+                <hr class="my-4">
+                <h6 class="mb-3"><strong>Disease Description</strong></h6>
+                <p> {{ prediction.description_prediction }} </p>
 
-                    </tr>
-                    <tr>
-                        <th scope="col" class="col-auto text-center" style="width: 300px;">Items Required for Formulation</th>
-                        <td id=ingredientsList><a href="itemlink" target='_blank'>Item name</a>, <a href="itemlink" target='_blank'>Item name</a></td>
-                    </tr>
-                    <tr class="steps-height">
-                        <th scope="col" class="col-auto text-center" style="padding:50px 0 50px 0;">Steps Required for preperation of Medication</th>
-                        <td></td>
-                    </tr>
-                </thead>
-            </table>
+                <!-- Items Required for Formulation -->
+                <hr class="my-4">
+                <h6 class="mb-3"><strong>Remedy</strong></h6>
+                <p>
+                    <a href="https://www.ayurtimes.com/?s=&q= prediction['Ayurvedic_Remedy'] " target="_blank"> {{ prediction.remedy_prediction }} </a>
+                </p>
+
+                <!-- Medication Recommended -->
+                <hr class="my-4">
+                <h6 class="mb-3"><strong>Disease Description</strong></h6>
+                <p> {{ prediction.description_prediction }} </p>
+
+                <!-- Medication Recommended -->
+                <hr class="my-4">
+                <h6 class="mb-3"><strong>Disease Description</strong></h6>
+                <p> {{ prediction.description_prediction }} </p>
+
+                <!-- Medication Recommended -->
+                <hr class="my-4">
+                <h6 class="mb-3"><strong>Disease Description</strong></h6>
+                <p> {{ prediction.description_prediction }} </p>
+            </div>
 
         </div>
+
     </div>
     <!-- why choose us section -->
 
