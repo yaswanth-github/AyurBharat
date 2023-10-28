@@ -63,31 +63,43 @@
         <div class="container mt-5">
 
         <div class=" d-flex justify-content-center flex-column mb-4">
-            <h2 style="color: white;"> Symptoms :  {{ Symptoms }} </h2>
+            
+            
             <div class="container">
                 <div class="row">
                     <div class="col-12 col-md-8">
                         <div class=" mb-3">
+                            
+                            {% for prediction in predictions %}
+
                             <div class="p-4 rounded-4 bg-light">
-                                <h5 class="text-center mb-4">Disease Name:  {{ disease_name }} </h5>
+                                <!-- Predicted disease -->
+                                <h5 class="text-center mb-4">Disease Name:  {{ prediction.disease_prediction }} </h5>
+
+                                <!-- Symptoms -->
+                                <hr class="my-4">
+                                <h6 class="mb-3"><strong>Symptoms</strong></h6>
+                                <p> {{ prediction.symptoms_prediction }} </p>
     
                                 <!-- Medication Recommended -->
                                 <hr class="my-4">
                                 <h6 class="mb-3"><strong>Disease Description</strong></h6>
-                                <p> {{ Description }} </p>
+                                <p> {{ prediction.description_prediction }} </p>
     
                                 <!-- Items Required for Formulation -->
                                 <hr class="my-4">
                                 <h6 class="mb-3"><strong>Remedy</strong></h6>
                                 <p>
-                                    <a href="https://www.ayurtimes.com/?s=&q= prediction['Ayurvedic_Remedy'] " target="_blank"> {{ Remedy }} </a>,
+                                    <a href="https://www.ayurtimes.com/?s=&q= prediction['Ayurvedic_Remedy'] " target="_blank"> {{ prediction.remedy_prediction }} </a>
                                 </p>
     
                                 <!-- Steps Required for Preparation of Medication -->
-                                <hr class="my-4">
+                                <!-- <hr class="my-4">
                                 <h6 class="mb-3"><strong>Steps Required for Preparation of Medication:</strong></h6>
-                                <p>Steps details here</p>
+                                <p>Steps details here</p> -->
                             </div>
+                            {% endfor %} 
+
                         </div>
                     </div>
                     <div class="col-12 col-sm-7 col-md-4">
@@ -113,8 +125,7 @@
                     </div>
                 </div>
                     
-                </div>
-    
+                </div> 
             </div>
         </div>
 
