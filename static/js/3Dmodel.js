@@ -11,7 +11,7 @@ document.getElementById('model-container').appendChild(renderer.domElement);
 const loader = new THREE.GLTFLoader();
 
 // Load the .glb model and add it to the scene
-loader.load("{% static 'models/your_model.glb' %}", (gltf) => {
+loader.load("{% static 'models/3dModelExpV2.glb' %}", (gltf) => {
     const model = gltf.scene;
     scene.add(model);
 
