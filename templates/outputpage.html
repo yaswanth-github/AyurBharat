@@ -68,29 +68,49 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12 col-md-8">
+<<<<<<< Updated upstream
                         <div class=" mb-3">
+=======
+                        <div class="mb-3">
+>>>>>>> Stashed changes
                             
                             {% for prediction in predictions %}
 
                             <div class="p-4 rounded-4 bg-light">
                                 <!-- Predicted disease -->
+<<<<<<< Updated upstream
                                 <h5 class="text-center mb-4">Disease Name:  {{ prediction.disease_prediction }} </h5>
+=======
+                                <h5 class="text-center mb-4">Disease Name:  prediction.disease_prediction  </h5>
+>>>>>>> Stashed changes
 
                                 <!-- Symptoms -->
                                 <hr class="my-4">
                                 <h6 class="mb-3"><strong>Symptoms</strong></h6>
+<<<<<<< Updated upstream
                                 <p> {{ prediction.symptoms_prediction }} </p>
+=======
+                                <p>  prediction.symptoms_prediction  </p>
+>>>>>>> Stashed changes
     
                                 <!-- Disease Description -->
                                 <hr class="my-4">
                                 <h6 class="mb-3"><strong>Disease Description</strong></h6>
+<<<<<<< Updated upstream
                                 <p> {{ prediction.description_prediction }} </p>
+=======
+                                <p>  prediction.description_prediction  </p>
+>>>>>>> Stashed changes
     
                                 <!-- Items Required for Formulation -->
                                 <hr class="my-4">
                                 <h6 class="mb-3"><strong>Remedy</strong></h6>
                                 <p>
+<<<<<<< Updated upstream
                                     <a href="https://www.ayurtimes.com/?s=&q= prediction['Ayurvedic_Remedy'] " target="_blank"> {{ prediction.remedy_prediction }} </a>
+=======
+                                    <a href="https://www.ayurtimes.com/?s=&q= prediction['Ayurvedic_Remedy'] " target="_blank"> prediction.remedy_prediction </a>
+>>>>>>> Stashed changes
                                 </p>
                             </div>
                             {% endfor %} 
