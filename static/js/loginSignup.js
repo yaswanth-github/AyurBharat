@@ -397,4 +397,3 @@ function validateSignupForm() {
         }
 
 
-// Open the login popup when the login button is clicked.
