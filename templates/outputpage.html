@@ -16,9 +16,6 @@
 {% endblock %}
 
 {% block body %}
-<script>
-    let predictionsData = JSON.parse('{{ predictions|safe }}');
-</script>
 
 <script src="{% static  'js/outputpage.js' %}"></script>
 <script src="{% static 'js/loginSignup.js' %}"></script>
@@ -31,7 +28,6 @@
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            
 
 
             <div class="collapse navbar-collapse justify-content-end" id="navbarContent">
@@ -60,7 +56,7 @@
     </nav>
 
 
-    
+
     <!-- input section-->
     <div class="banner-section-bg-container d-flex justify-content-center flex-column mb-4">
         
@@ -74,10 +70,30 @@
                     <div class="col-12 col-md-8">
                         <div class=" mb-3">
                             
-                            
+                            {% for prediction in predictions %}
 
-                            <div class="main-container"></div>
-                        
+                            <div class="p-4 rounded-4 bg-light">
+                                <!-- Predicted disease -->
+                                <h5 class="text-center mb-4">Disease Name:  {{ prediction.disease_prediction }} </h5>
+
+                                <!-- Symptoms -->
+                                <hr class="my-4">
+                                <h6 class="mb-3"><strong>Symptoms</strong></h6>
+                                <p> {{ prediction.symptoms_prediction }} </p>
+    
+                                <!-- Disease Description -->
+                                <hr class="my-4">
+                                <h6 class="mb-3"><strong>Disease Description</strong></h6>
+                                <p> {{ prediction.description_prediction }} </p>
+    
+                                <!-- Items Required for Formulation -->
+                                <hr class="my-4">
+                                <h6 class="mb-3"><strong>Remedy</strong></h6>
+                                <p>
+                                    <a href="https://www.ayurtimes.com/?s=&q= prediction['Ayurvedic_Remedy'] " target="_blank"> {{ prediction.remedy_prediction }} </a>
+                                </p>
+                            </div>
+                            {% endfor %} 
 
                         </div>
                     </div>
