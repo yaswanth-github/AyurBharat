@@ -1,5 +1,3 @@
-
-
 console.log(10);
 
 import * as THREE from 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r126/three.min.js';
