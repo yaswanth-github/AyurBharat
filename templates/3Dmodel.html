@@ -11,17 +11,18 @@
 
 <link rel="stylesheet" type="text/css" href="{% static 'css/homepage.css' %}">
 <link rel="stylesheet" type="text/css" href="{% static 'css/dropDown.css' %}">
-<link rel="stylesheet" sype="text/css" href="{% static 'css/loginSignup.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/loginSignup.css' %}">
 {% endblock %}
 
 
 {% block body %}
 <script src="{% static 'js/loginSignup.js' %}"></script> 
-<script src="{% static 'js/three.js' %}"></script>
-<script src="{% static 'js/GLTFLoader.js' %}"></script>
-
-<script type="module" src="{% static 'js/3Dmodel.js' %}"></script> 
-
+<!--<script type="module" src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.158.0/three.module.min.js"></script>-->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/loaders/GLTFLoader.js"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r126/three.min.js" integrity="sha512-n8IpKWzDnBOcBhRlHirMZOUvEq2bLRMuJGjuVqbzUJwtTsgwOgK5aS0c1JA647XWYfqvXve8k3PtZdzpipFjgg==" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/three@0.126.0/examples/js/loaders/GLTFLoader.js">
+<script src="{% static 'js/3Dmodel.js' %}"></script> 
 
 <!-- navbar -->
 <nav class="navbar navbar-expand-lg">
@@ -58,14 +59,15 @@
             </ul>
         </div>
     </div>
+
 </nav>
+
 
 
 
 <!-- Add a new section for the 3D model here -->
     <div class="container">
         <h2>3D Human Model</h2>
-        <div id="model-container"></div>
         </div>
     </div>
 
