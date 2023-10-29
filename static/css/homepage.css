@@ -121,12 +121,24 @@
     font-size: 16px;
 }
 
+/* Apply a smooth hover effect with a 0.3-second transition */
+.hover-effect {
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Scale the elements and change the background color on hover */
+.hover-effect:hover {
+    transform: scale(1.05);
+    background-color: #f8f8f8; /* Change the background color on hover (adjust as needed) */
+}
+
 .copyright-text {
     font-family: "Roboto";
     font-size: 12px;
 
     text-align: center;
 }
+
 
 .footer-container {
     background-color: #19232d;
