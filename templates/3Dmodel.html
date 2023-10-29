@@ -8,6 +8,10 @@
 <script src="https://app.wotnot.io/chat-widget/7aShk3YYCcWF173117878006Ky5zIFVu.js" defer></script>
 <script src="https://kit.fontawesome.com/2bc02a5da9.js" crossorigin="anonymous"></script>  
 
+<meta charset="UTF-8">
+<!-- <script type="module" src="{% static 'js/3Dmodel.js' %}"></script> -->
+<script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+
 
 <link rel="stylesheet" type="text/css" href="{% static 'css/homepage.css' %}">
 <link rel="stylesheet" type="text/css" href="{% static 'css/dropDown.css' %}">
@@ -17,12 +21,8 @@
 
 {% block body %}
 <script src="{% static 'js/loginSignup.js' %}"></script> 
-<!--<script type="module" src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.158.0/three.module.min.js"></script>-->
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/loaders/GLTFLoader.js"></script> -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r126/three.min.js" integrity="sha512-n8IpKWzDnBOcBhRlHirMZOUvEq2bLRMuJGjuVqbzUJwtTsgwOgK5aS0c1JA647XWYfqvXve8k3PtZdzpipFjgg==" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/three@0.126.0/examples/js/loaders/GLTFLoader.js"></script>
-<script src="{% static 'js/3Dmodel.js' %}"></script> 
+
+
 
 <!-- navbar -->
 <nav class="navbar navbar-expand-lg">
@@ -62,14 +62,16 @@
 
 </nav>
 
+<!-- A-Frame 3D Model Viewer -->
+<a-scene>
+    <a-light type="point" position="1 -1 2" intensity="1" distance="10" decay="2" color="yellow"></a-light>
+    
+    <a-entity camera position="0 0 6"></a-entity>
 
+    <!-- Add your 3D model -->
+    <a-entity gltf-model="{% static 'models/3DModelExpV2.glb' %}"></a-entity>
+</a-scene>
 
-
-<!-- Add a new section for the 3D model here -->
-    <div class="model-container">
-        <h2>3D Human Model</h2>
-        </div>
-    </div>
 
 <!-- why choose us section -->
     
