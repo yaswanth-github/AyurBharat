@@ -8,6 +8,7 @@
 <script src="https://app.wotnot.io/chat-widget/7aShk3YYCcWF173117878006Ky5zIFVu.js" defer></script>
 <script src="https://kit.fontawesome.com/2bc02a5da9.js" crossorigin="anonymous"></script>  
 
+
 <link rel="stylesheet" type="text/css" href="{% static 'css/homepage.css' %}">
 <link rel="stylesheet" type="text/css" href="{% static 'css/dropDown.css' %}">
 <link rel="stylesheet" type="text/css" href="{% static 'css/loginSignup.css' %}">
@@ -16,7 +17,13 @@
 
 {% block body %}
 <script src="{% static 'js/loginSignup.js' %}"></script> 
+<!--<script type="module" src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.158.0/three.module.min.js"></script>-->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/loaders/GLTFLoader.js"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r126/three.min.js" integrity="sha512-n8IpKWzDnBOcBhRlHirMZOUvEq2bLRMuJGjuVqbzUJwtTsgwOgK5aS0c1JA647XWYfqvXve8k3PtZdzpipFjgg==" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/three@0.126.0/examples/js/loaders/GLTFLoader.js">
 <script src="{% static 'js/3Dmodel.js' %}"></script> 
+
 <!-- navbar -->
 <nav class="navbar navbar-expand-lg">
     <div class="container-fluid">
@@ -52,21 +59,15 @@
             </ul>
         </div>
     </div>
+
 </nav>
 
 
 
-<!-- text section -->
-    <div class="banner-section-bg-container d-flex justify-content-center flex-column">
-        <div class="text-center">
-            <h1 class="banner-heading mb-3">Ayur Bharat</h1>
-            <p class="banner-caption mb-4">One stop solution for your problem</p>
-            <div class="msg" style="color: white;">{{ msg }}</div>
-            <a href="{% url 'inputpage' %}"><button class="custom-outline-button" id="tryNow">Try Now!</button></a>
 
-            <!-- Start of ChatBot (www.chatbot.com) code -->
-            <script src='https://app.wotnot.io/chat-widget/7aShk3YYCcWF173117878006Ky5zIFVu.js' defer></script>
-            <!-- End of ChatBot code -->
+<!-- Add a new section for the 3D model here -->
+    <div class="container">
+        <h2>3D Human Model</h2>
         </div>
     </div>
 
