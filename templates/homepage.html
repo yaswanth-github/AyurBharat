@@ -16,38 +16,40 @@
 {% block body %}
 <script src="{% static 'js/loginSignup.js' %}"></script> 
 <!-- navbar -->
-<nav class="navbar navbar-expand-lg">
+<nav class="navbar navbar-expand-lg" style="background-color: #F8F8F8;">
     <div class="container-fluid">
         <a class="navbar-brand" href="/">
             <img src="https://live.staticflickr.com/65535/53217076980_d733d6cd73_w.jpg" width="50" height="50">
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-
 
         <div class="collapse navbar-collapse justify-content-end" id="navbarContent">
             <ul class="navbar-nav fw-bold">
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'inputpage' %}">Analyse Problem</a>
+                    <a class="nav-link" href="{% url 'inputpage' %}" style="color: #1d2f4e;">Analyse Problem</a>
                 </li>
                 <li class="nav-item">
+<<<<<<< Updated upstream
                     <a class="nav-link" href="{% url 'ayurdoctor' %}">Consult a doctor</a>
+=======
+                    <a class="nav-link" href="{% url 'ayurdoctor' %}" style="color: #1d2f4e;">Consult a doctor</a>
+>>>>>>> Stashed changes
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'ayurmart' %}">AyurMart</a>
+                    <a class="nav-link" href="{% url 'ayurmart' %}" style="color: #1d2f4e;">Ayurmart</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'dmodel' %}">3D Model</a> <!--need to link 3D model page here-->
+                    <a class="nav-link" href="{% url 'dmodel' %}" style="color: #1d2f4e;">3D Model</a>
                 </li>
-                <li class="dropdown">
-                    <img src="https://live.staticflickr.com/65535/53283340452_0c10341374.jpg" alt="Image" width="50" height="50" id="image-trigger">
+                <li class="nav-item dropdown">
+                    <i class="fa-solid fa-user " id="user-icon" style="color: #1d2f4e;"></i>
                     <div class="dropdown-content">
                         <!-- Dropdown menu items go here -->
-                        <a class="nav-link open-login-button" onclick="openLoginForm()">Log<span style="color: MediumSeaGreen;">in</span></a>
-                        <a class="nav-link open-signup-button" onclick="openSignupForm()">Sign<span style="color: MediumSeaGreen;">up</span></a>
-
-                </div>
+                        <a class="nav-link open-login-button" onclick="openLoginForm()" style="color: #1d2f4e;">Log<span style="color: MediumSeaGreen;">in</span></a>
+                        <a class="nav-link open-signup-button" onclick="openSignupForm()" style="color: #1d2f4e;">Sign<span style="color: MediumSeaGreen;">up</span></a>
+                    </div>
                 </li>
             </ul>
         </div>
@@ -56,42 +58,23 @@
 
 
 
+
 <!-- text section -->
 
 
 
-    <div id="carouselExampleFade" class="carousel slide carousel-fade">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <div class="banner-section-bg-container d-flex justify-content-center flex-column">
-                <div class="text-center">
-                    <h1 class="banner-heading mb-3">Ayur Bharat</h1>
-                    <p class="banner-caption mb-4">One stop solution for your problem</p>
-                    <div class="msg" style="color: white;">{{ msg }}</div>
-                    <a href="{% url 'inputpage' %}"><button class="custom-outline-button" id="tryNow">Try Now!</button></a>
-        
-                    <!-- Start of ChatBot (www.chatbot.com) code -->
-                    <script src='https://app.wotnot.io/chat-widget/7aShk3YYCcWF173117878006Ky5zIFVu.js' defer></script>
-                    <!-- End of ChatBot code -->
-                </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img src="https://live.staticflickr.com/65535/53292166389_9ea0dfbd2c_h.jpg" class="d-block w-100 " alt="...">
-          </div>
-          <div class="carousel-item">
-            <img src="https://live.staticflickr.com/65535/53291793286_c9a74b43b8_h.jpg" class="d-block w-100" alt="...">
-          </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-      </div>
+<div class="banner-section-bg-container d-flex justify-content-center flex-column">
+    <div class="text-center">
+        <h1 class="banner-heading mb-3">Ayur Bharat</h1>
+        <p class="banner-caption mb-4">One stop solution for your problem</p>
+        <div class="msg" style="color: white;">{{ msg }}</div>
+        <a href="{% url 'inputpage' %}"><button class="custom-outline-button" id="tryNow">Try Now!</button></a>
+
+        <!-- Start of ChatBot (www.chatbot.com) code -->
+        <script src='https://app.wotnot.io/chat-widget/7aShk3YYCcWF173117878006Ky5zIFVu.js' defer></script>
+        <!-- End of ChatBot code -->
+    </div>
+</div>
 
 
 

@@ -17,40 +17,65 @@
 {% block body %}
 
 <!-- navbar -->
-<nav class="navbar navbar-expand-lg">
+<nav class="navbar navbar-expand-lg " style="background-color: #F8F8F8;">
     <div class="container-fluid">
         <a class="navbar-brand" href="/">
             <img src="https://live.staticflickr.com/65535/53217076980_d733d6cd73_w.jpg" width="50" height="50">
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
-
-        <div class="collapse navbar-collapse justify-content-end" id="navbarContent">
-            <ul class="navbar-nav fw-bold">
+        <div class="collapse navbar-collapse justify-content-between align-items-center" id="navbarContent">
+            <ul class="navbar-nav fw-bold align-right">
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'inputpage' %}">Analyse Problem</a>
+                    <a class="nav-link" href="{% url 'homepage' %}" style="color: #1d2f4e;">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'ayurdoctor' %}">Consult a doctor</a>
+                    <a class="nav-link" href="{% url 'inputpage' %}" style="color: #1d2f4e;">Analyse Problem</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'dmodel' %}">3D Model</a> <!--need to link 3D model page here-->
+                    <a class "nav-link" href="{% url 'ayurdoctor' %}" style="color: #1d2f4e;">Consult a doctor</a>
                 </li>
-                <li class="dropdown">
-                    <img src="https://live.staticflickr.com/65535/53283340452_0c10341374.jpg" alt="Image" width="50" height="50" id="image-trigger">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'dmodel' %}" style="color: #1d2f4e;">3D Model</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <i class="fa-solid fa-magnifying-glass" id="search-icon"></i>
                     <div class="dropdown-content">
-                        <!-- Dropdown menu items go here -->
-                        <a class="nav-link open-login-button" onclick="openLoginForm()">Log<span style="color: MediumSeaGreen;">in</span></a>
-                        <a class="nav-link open-signup-button" onclick="openSignupForm()">Sign<span style="color: MediumSeaGreen;">up</span></a>
-
-                </div>
+                        <input type="text" id="searchInput" class="form-control" style="width: 100%;" placeholder="Search...">
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <i class="fa-solid fa-cart-shopping" id="card-icon"></i>
+                </li>
+                <li class="nav-item dropdown">
+                    <i class="fa-solid fa-user fa-lg" id="user-icon"></i>
+                    <div class="dropdown-content">
+                        <a class="nav-link open-login-button" onclick="openLoginForm()" style="color: #1d2f4e;">Log<span style="color: MediumSeaGreen;">in</span></a>
+                        <a class="nav-link open-signup-button" onclick "openSignupForm()" style="color: #1d2f4e;">Sign<span style="color: MediumSeaGreen;">up</span></a>
+                    </div>
                 </li>
             </ul>
         </div>
     </div>
 </nav>
+
+
+<marquee class="card-paragraph card-special-paragraph" behavior="scroll" direction="left">This page is Under Construction, Currently Building only for Educational purposes as a project for Smart India Hackathon. Built and maintained by Team AyurBharat.</marquee>
+
+<!--Dynamic code appending spot-->
+<div class="d-flex justify-content-center flex-column mb-4">
+    <div class="container mt-5">
+        <div class=" d-flex justify-content-center flex-column mb-4">
+            <div class="container">
+                <div class="row" id="mart-container">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 
     <script src="{% static 'js/loginSignup.js' %}"></script> 
     <script src="{% static 'js/ayurMart.js' %}"></script> 

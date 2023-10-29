@@ -60,64 +60,7 @@
     margin-right: 10px;
 }
 
-.copyright-text {
-    font-family: "Roboto";
-    font-size: 12px;
 
-    text-align: center;
-}
-
-.footer-container {
-    background-color: #19232d;
-    color: #5a7184;
-}
-
-.footer-mainlogo {
-    width: 60px;
-    height: 60px;
-    margin-bottom: 20px;
-    border-radius: 30px;
-}
-
-.footer-social-icon-bg {
-    width: 40px;
-    height: 40px;
-    border-radius: 20px;
-    background-color: #202b36;
-    padding: 5px;
-    margin: 3px;
-    padding-left: 12px;
-    padding-top: 8px;
-    margin-bottom: 9px;
-}
-
-.footer-text {
-
-    font-family: Roboto;
-
-    color: white;
-}
-
-.footer-heading {
-    font-size: 19px;
-    font-family: Roboto;
-    font-weight: 600;
-    margin: 10px;
-}
-
-.footer-logos {
-    margin: 7px;
-    margin-right: 8px;
-}
-
-.steps-height {
-    height: 70px;
-}
-
-.footer-line {
-    margin-top: 10px;
-    background-color: #959ead;
-}
 
 
 /* card css */
@@ -218,4 +161,9 @@
 .hover-effect:hover {
     transform: scale(1.05);
     /* Increase the size on hover */
+}
+
+.mrp-paragraph {
+    color:#183b56;
+    font-size: 15px;
 }
