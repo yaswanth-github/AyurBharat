@@ -62,15 +62,37 @@
 
 </nav>
 
-<!-- A-Frame 3D Model Viewer -->
-<a-scene>
-    <a-light type="point" position="1 -1 2" intensity="1" distance="10" decay="2" color="yellow"></a-light>
-    
-    <a-entity camera position="0 0 6"></a-entity>
+<div id="model">
+    <!-- A-Frame 3D Model Viewer -->
+    <a-scene cursor="rayOrigin: mouse">
+        <a-scene raycaster="objects: [data-raycastable]">
+            <!-- <a-light type="point" position="1 1 1" intensity="2" distance="20" decay="4" color="yellow"></a-light> -->
+            <!-- <a-light type="directional" position="0 100 100" intensity="1" color="blue"></a-light> -->
+            <a-entity camera position="0 0 5"></a-entity>
 
-    <!-- Add your 3D model -->
-    <a-entity gltf-model="{% static 'models/3DModelExpV2.glb' %}"></a-entity>
-</a-scene>
+            <!-- Add your 3D model -->
+            <a-entity id="model" gltf-model="{% static 'models/3DModelExpV2.glb' %}" rotation="0 0 0" scale="1 1 1" 
+            ></a-entity>
+
+            <!-- Buttons for front and back views -->
+            <button onclick="rotateFront()">Front View</button>
+            <button onclick="rotateBack()">Back View</button>
+        </a-scene>
+    </a-scene>
+
+    <script>
+        // JavaScript functions to rotate the model
+        function rotateFront() {
+            const model = document.querySelector("#model");
+            model.setAttribute("rotation", { x: 0, y: 90, z: 0 });
+        }
+
+        function rotateBack() {
+            const model = document.querySelector("#model");
+            model.setAttribute("rotation", { x: 0, y: -90, z: 0 });
+        }
+    </script>
+</div>
 
 
 <!-- why choose us section -->
