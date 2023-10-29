@@ -1,13 +1,4 @@
-console.log(10);
 
-import * as THREE from 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r126/three.min.js';
-import { GLTFLoader } from 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r126/loaders/GLTFLoader.js';
-
-
-// Create a scene
-const scene = new THREE.Scene();
-
-// Create a camera
 
 console.log(10);
 
