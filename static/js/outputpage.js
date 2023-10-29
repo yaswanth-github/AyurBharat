@@ -1,24 +1,4 @@
 let mainContainer = document.getElementById("main-container");
-let predictions = [{
-        disease_prediction: "Disease 1",
-        symptoms_prediction: "Symptoms 1",
-        description_prediction: "Description 1",
-        Ayurvedic_Remedy: "remedy-link-1",
-        remedy_prediction: "Remedy 1",
-        ingredients:"sdsaljvn,alsibf,alskvn, kasnsv"
-    },
-    {
-        disease_prediction: "Disease 2",
-        symptoms_prediction: "Symptoms 2",
-        description_prediction: "Description 2",
-        Ayurvedic_Remedy: "remedy-link-2",
-        remedy_prediction: "Remedy 2",
-        ingredients:"sdsaljvn,alsibf,alskvn, kasnsv"
-    },
-    // Add more predictions as needed
-];
-
-
 let addToCartCount = 0;
 
 function createAndAppendPredictionElement(prediction, trailer) {
@@ -78,7 +58,7 @@ function createAndAppendPredictionElement(prediction, trailer) {
     remedyHeader.innerHTML = "<strong>Remedy</strong>";
 
     let remedyLink = document.createElement("a");
-    remedyLink.href = "https://www.ayurtimes.com/?s=&q=" + prediction.Ayurvedic_Remedy;
+    remedyLink.href = "https://www.ayurtimes.com/?s=&q=" + prediction.remedy_prediction;
     remedyLink.target = "_blank";
     remedyLink.textContent = prediction.remedy_prediction;
 
@@ -90,7 +70,7 @@ function createAndAppendPredictionElement(prediction, trailer) {
 
     let ingredientsParagraph = document.createElement("p");
     ingredientsParagraph.id = ingredientsParagraphId;
-    ingredientsParagraph.textContent = prediction.ingredients;
+    ingredientsParagraph.textContent = prediction.ingredients_prediction;
     ingredientsHeader.style.display = "none"; // Initially hide the ingredients section
     ingredientsParagraph.style.display = "none";
 
@@ -102,7 +82,7 @@ function createAndAppendPredictionElement(prediction, trailer) {
 
     let stepsParagraph = document.createElement("p");
     stepsParagraph.id = stepsParagraphId;
-    stepsParagraph.textContent = prediction.detailed_steps;
+    stepsParagraph.textContent = prediction.preparation_prediction;
     stepsHeader.style.display = "none"; // Initially hide the steps section
     stepsParagraph.style.display = "none";
 
@@ -123,6 +103,8 @@ function createAndAppendPredictionElement(prediction, trailer) {
             hr1.style.display = "block";
             hr2.style.display = "block";
             hr3.style.display = "block";
+            getFormulationButton.textContent = "Hide Formulation!";
+
         } else {
             ingredientsHeader.style.display = "none";
             ingredientsParagraph.style.display = "none";
@@ -131,6 +113,7 @@ function createAndAppendPredictionElement(prediction, trailer) {
             hr1.style.display = "none";
             hr2.style.display = "none";
             hr3.style.display = "none";
+            getFormulationButton.textContent = "Get Formulation Now!";
         }
     });
 
