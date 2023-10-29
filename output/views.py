@@ -5,6 +5,7 @@ import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.ensemble import RandomForestClassifier
 from nltk.corpus import stopwords
+import json
 
 # Construct the absolute file path using the STATIC_ROOT setting
 csv_file_path = os.path.join('static', 'csv_files', 'AyurBharat_DataSet.csv')
@@ -96,14 +97,14 @@ def outputpage(request):
         symptoms = request.POST.get('symptoms')  # Get user input
             
         predictions = []        
-        predit = predict_disease_info(symptoms)
+        predit = json.dumps(predict_disease_info(symptoms))
         predictions.append(predit)
 
         print(symptoms, predictions)
 
         return render(request, 'outputpage.html', { 'predictions': predictions } )
     
-    return redirect( 'inputpage')
+    return redirect('inputpage')
 
 
 def dmodel(request):
