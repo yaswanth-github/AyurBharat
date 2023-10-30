@@ -1,0 +1,116 @@
+
+.banner-image {
+    background-size: auto;
+    height: auto;
+}
+
+.consultation-image {
+    background-size: 30%;
+    height: 30%;
+}
+
+.additional-content {
+    background-color: #f7f7f7;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+.additional-content h3 {
+    color: #2e74b2;
+}
+
+.doctor-info {
+    margin-top: 20px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 3px;
+}
+
+
+.doctor-card {
+    margin-top: 20px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+
+.red-text {
+    color: red;
+}
+
+.moving-text {
+    color: red;
+    animation: moveText 2s infinite; /* You can adjust the duration and behavior as needed */
+}
+
+@keyframes moveText {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(20px); /* Adjust the distance and direction of movement */
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+/* Styling for the consultation form */
+.form-container {
+    background-color: #f7f7f7;
+    padding: 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.form-group label {
+    font-weight: bold;
+    color: #2e74b2;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+
+.form-group textarea {
+    resize: vertical; /* Allow vertical resizing of the textarea */
+}
+
+.form-group button {
+    background-color: #2e74b2;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+/* Styling for the Additional Details section */
+.additional-content {
+    background-color: #f7f7f7;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 3px;
+}
+
+.additional-content h3 {
+    color: #2e74b2;
+}
+
+/* CSS Styles */
+.image-container {
+    max-width: 100%;
+    overflow: hidden;
+    border-radius: 3px; /* Adjust the border-radius as needed for the desired roundness */
+}
+
+.rounded-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 3px; /* Adjust the border-radius to match the container */
+}

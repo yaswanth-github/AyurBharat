@@ -28,4 +28,23 @@ button:hover {
     background-color: #0056b3; /* Change the button hover color as needed */
 }
 
+.red-text {
+    color: red;
+}
 
+.moving-text {
+    color: red;
+    animation: moveText 2s infinite; /* You can adjust the duration and behavior as needed */
+}
+
+@keyframes moveText {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(20px); /* Adjust the distance and direction of movement */
+    }
+    100% {
+        transform: translateX(0);
+    }
+}

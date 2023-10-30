@@ -15,6 +15,9 @@
 
 {% block body %}
 
+<script src="{% static 'js/loginSignup.js' %}"></script> 
+<script src="{% static 'js/ayurDoctor.js' %}"></script> 
+
 <!-- navbar -->
 <nav class="navbar navbar-expand-lg">
     <div class="container-fluid">
@@ -29,16 +32,16 @@
         <div class="collapse navbar-collapse justify-content-end" id="navbarContent">
             <ul class="navbar-nav fw-bold">
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'homepage' %}">Home</a>
+                    <a class="nav-link" href="{% url 'homepage' %}" style="color: #1d2f4e;" >Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'inputpage' %}">Analyse Problem</a>
+                    <a class="nav-link" href="{% url 'inputpage' %}"  style="color: #1d2f4e;">Analyse Problem</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'ayurdoctor' %}">Consult a doctor</a>
+                    <a class="nav-link" href="{% url 'ayurmart' %}" style="color: #1d2f4e;">AyurMart</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'dmodel' %}">3D Model</a> <!--need to link 3D model page here-->
+                    <a class="nav-link" href="{% url 'dmodel' %}" style="color: #1d2f4e;">3D Model</a> <!--need to link 3D model page here-->
                 </li>
                 <li class="dropdown">
                     <img src="https://live.staticflickr.com/65535/53283340452_0c10341374.jpg" alt="Image" width="50" height="50" id="image-trigger">
@@ -53,19 +56,101 @@
         </div>
     </div>
 </nav>
-<div class="under-construction-container">
+
+<div class="under-construction-container text-center">
     <div class="message">
-        <h1>Under Construction</h1>
-        <p>We're working on something awesome. Please check back later.</p>
+        <h1 class="red-text">Under Maintenance</h1>
+        <p class="red-text moving-text">We're working on something awesome. Please check back later.</p>
+    </div>
+</div>
+<marquee class="card-paragraph card-special-paragraph" behavior="scroll" direction="left">Currently Building only for Educational purposes as a project for Smart India Hackathon. Built and maintained by Team AyurBharat.</marquee>
+
+<!-- <div class="banner d-flex justify-content-center flex-column">
+    Banner Image
+    <img src="{% static 'imgs/banner.png' %}" alt="Ayurveda Banner" class="banner-image">
+</div> -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <!-- Main content for Ayurvedic Doctor Consultation -->
+            <h2>Ayurvedic Doctor Consultation</h2>
+            <div class="image-container">
+                <img src="{% static 'imgs/banner.png' %}" alt="Image Description" class="rounded-image">
+            </div>
+            <p>Welcome to our Ayurvedic Doctor Consultation page. Consult with our experienced Ayurvedic doctors to address your health concerns using traditional Ayurvedic practices.</p>
+            
+            <div class="form-container">
+                <h3>Consultation Form</h3>
+                <!-- Your consultation form here -->
+
+                <form action="/submit-consultation" method="post">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" class="form-control" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" class="form-control" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit Consultation Request</button>
+                </form>
+
+            </div>
+
+            <!-- Additional Blocks -->
+            <div class="additional-content">
+                <h3>Why Choose Ayurveda?</h3>
+                <p>Our Ayurvedic consultations provide personalized guidance based on the principles of Ayurveda, a holistic system
+                    of medicine. Our doctors have years of experience and can help you with a wide range of health issues.</p>
+                <p>Ayurveda is a holistic approach to healing that focuses on the balance of mind, body, and spirit. It offers natural remedies and personalized treatments to promote overall well-being.</p>
+                
+                <ul>
+                    <li>Experienced Ayurvedic practitioners</li>
+                    <li>Customized treatment plans</li>
+                    <li>Natural remedies for healing</li>
+                    <li>Focus on mind, body, and spirit</li>
+                    <li>Overall well-being promotion</li>
+                </ul>
+
+            </div>
+        </div>
+        <div class="col-md-4">
+            <!-- Ayurvedic Doctors Information -->
+            <div class="text-center">
+                <h3>Our Ayurvedic Doctors</h3>
+            </div>
+            
+            <!-- Doctor 1 -->
+            <div class="card doctor-card">
+                <img src="{% static 'imgs/doctor.png' %}" alt="Doctor 1" class="card-img-top">
+                <div class="card-body">
+                    <h4 class="card-title">Dr. Ayurveda 1</h4>
+                    <p class="card-text">Experienced Ayurvedic practitioner with expertise in holistic healing.</p>
+                </div>
+            </div>
+            
+            <!-- Doctor 2 -->
+            <div class="card doctor-card">
+                <img src="{% static 'imgs/doctor.png' %}" alt="Doctor 2" class="card-img-top">
+                <div class="card-body">
+                    <h4 class="card-title">Dr. Ayurveda 2</h4>
+                    <p class="card-text">Specializes in Ayurvedic treatments for various health conditions.</p>
+                </div>
+            </div>
+            
+            <!-- Add more doctors with their image URLs -->
+        </div>
     </div>
 </div>
 
 
-
-
-
-
-
-    <script src="{% static 'js/loginSignup.js' %}"></script> 
-    <script src="{% static 'js/ayurDoctor.js' %}"></script> 
 {% endblock %}
