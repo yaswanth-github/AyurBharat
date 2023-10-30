@@ -1,0 +1,31 @@
+/* 3D Model Styling */
+
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap');
+
+
+/* 3D Model Styling */
+#model {
+    float: right; /* or use other CSS positioning styles as needed */
+    width: 35%; /* Adjust the width as needed */
+    height: 100vh; /* Set the height to match the viewport height */
+    background-color: #f0f0f0; /* Change the background color as needed */
+}
+
+
+
+button {
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: #007bff; /* Change the button background color as needed */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #0056b3; /* Change the button hover color as needed */
+}
+
+
