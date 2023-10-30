@@ -308,7 +308,7 @@ let products = [
     {
         productName: "Amritadi Guggulu",
         imageUrl: "https://maharishiayurvedaindia.com/cdn/shop/files/amritadi-guggulu-100-tablets-maharishi-ayurveda-india-1_700x.jpg?v=1692185427",
-        productDesc: "Amritadi Guggulu is an ayurvedic medicine used to treat swelling of joints and limbs, gout, arthritis, piles, skin diseases and constipation.",
+        productDesc: "Amritadi Guggulu is an ayurvedic medicine used to treat swelling of joints and limbs, gout, skin diseases and constipation.",
         productPrice: "220"
     },
     {
@@ -345,8 +345,13 @@ let products = [
         imageUrl:"https://maharishiayurvedaindia.com/cdn/shop/files/phal-ghrit-promotes-fertility-100gms-maharishi-ayurveda-india-1_700x.jpg?v=1692185514",
         productDesc: "Phal Ghrita is an ayurvedic medicine, in herbal ghee form. It is also used for panchakarma procedures. ",
         productPrice:"430"
-    }
-    ,
+    },
+    {
+        productName:"Giloy (Tinospora cordifolia)" ,
+        imageUrl:"https://maharishiayurvedaindia.com/cdn/shop/files/giloy-satva-guduchi-amrita-satva-10gms-pack-of-5-maharishi-ayurveda-india-1_700x.jpg?v=1692185673",
+        productDesc: "A potent ayurvedic formulation that is obtained from the maceration of the aqueous extract of the divine Giloy plant.",
+        productPrice:"630"
+    },
     {
         productName:"" ,
         imageUrl:"",
@@ -365,7 +370,7 @@ document.addEventListener("DOMContentLoaded", function() {
     for (let i = 0; i < predictionsData.length; i++) {
         let prediction = predictionsData[i];
         createAndAppendPredictionElement(JSON.parse(prediction));
-
+console.log(JSON.parse(prediction).remedy_prediction);
         for(let j=0;j<products.length;j++){
             if(products[j].productName===JSON.parse(prediction).remedy_prediction){
                 createProductCard(products[j]);

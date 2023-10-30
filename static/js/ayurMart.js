@@ -152,7 +152,7 @@ let products = [
     {
         productName: "Amritadi Guggulu",
         imageUrl: "https://maharishiayurvedaindia.com/cdn/shop/files/amritadi-guggulu-100-tablets-maharishi-ayurveda-india-1_700x.jpg?v=1692185427",
-        productDesc: "Amritadi Guggulu is an ayurvedic medicine used to treat gout, arthritis, piles, skin diseases and constipation.",
+        productDesc: "Amritadi Guggulu is an ayurvedic medicine used to treat swelling of joints and limbs, gout, skin diseases and constipation.",
         productPrice: "220"
     },
     {
@@ -192,6 +192,12 @@ let products = [
     }
     ,
     {
+        productName:"Giloy (Tinospora cordifolia)" ,
+        imageUrl:"https://maharishiayurvedaindia.com/cdn/shop/files/giloy-satva-guduchi-amrita-satva-10gms-pack-of-5-maharishi-ayurveda-india-1_700x.jpg?v=1692185673",
+        productDesc: "A potent ayurvedic formulation that is obtained from the maceration of the aqueous extract of the divine Giloy plant.",
+        productPrice:"630"
+    },
+    {
         productName:"" ,
         imageUrl:"",
         productDesc: "",
@@ -199,7 +205,6 @@ let products = [
     }
 
 ];
-
 
 for(let product of products){
     createProductCard(product);
