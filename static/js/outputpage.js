@@ -367,8 +367,8 @@ document.addEventListener("DOMContentLoaded", function() {
         createAndAppendPredictionElement(JSON.parse(prediction));
 
         for(let j=0;j<products.length;j++){
-            if(products[i].productName===JSON.parse(prediction).remedy_prediction){
-                createProductCard(products[i]);
+            if(products[j].productName===JSON.parse(prediction).remedy_prediction){
+                createProductCard(products[j]);
                 break;
             }
         }
