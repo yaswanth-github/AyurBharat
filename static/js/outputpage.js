@@ -308,7 +308,7 @@ let products = [
     {
         productName: "Amritadi Guggulu",
         imageUrl: "https://maharishiayurvedaindia.com/cdn/shop/files/amritadi-guggulu-100-tablets-maharishi-ayurveda-india-1_700x.jpg?v=1692185427",
-        productDesc: "Amritadi Guggulu is an ayurvedic medicine used to treat gout, arthritis, piles, skin diseases and constipation.",
+        productDesc: "Amritadi Guggulu is an ayurvedic medicine used to treat swelling of joints and limbs, gout, arthritis, piles, skin diseases and constipation.",
         productPrice: "220"
     },
     {
