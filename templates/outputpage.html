@@ -4,8 +4,6 @@
 
 {% block head %}
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/dropDown.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/loginSignup.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/outputpage.css' %}">
 
     <script src="https://kit.fontawesome.com/2bc02a5da9.js" crossorigin="anonymous"></script>
@@ -15,42 +13,9 @@
 
 {% block body %}
 
-<!-- navbar -->
-<nav class="navbar navbar-expand-lg">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="/">
-            <img src="https://live.staticflickr.com/65535/53217076980_d733d6cd73_w.jpg" width="50" height="50">
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
 
 
-
-        <div class="collapse navbar-collapse justify-content-end" id="navbarContent">
-            <ul class="navbar-nav fw-bold">
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'inputpage' %}">Analyse problem</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'ayurdoctor' %}">Consult a doctor</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'ayurmart' %}">Marketplace</a>
-                </li>
-                <li class="dropdown">
-                    <img src="https://live.staticflickr.com/65535/53283340452_0c10341374.jpg" alt="Image" width="50" height="50" id="image-trigger">
-                    <div class="dropdown-content">
-                        <!-- Dropdown menu items go here -->
-                        <a class="nav-link open-login-button" onclick="openLoginForm()">Log<span style="color: MediumSeaGreen;">in</span></a>
-                        <a class="nav-link open-signup-button" onclick="openSignupForm()">Sign<span style="color: MediumSeaGreen;">up</span></a>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
-
+<div id="app"></div>
 <!--Dynamic code appending spot-->
 <div class="banner-section-bg-container d-flex justify-content-center flex-column mb-4">
     <div class="container mt-5">
@@ -70,5 +35,18 @@
 </script>
 
 <script src="{% static  'js/outputpage.js' %}"></script>
-<script src="{% static 'js/loginSignup.js' %}"></script>
+
+<script>
+    var homepageURL = "{% url 'homepage' %}";
+    var inputPageURL = "{% url 'inputpage' %}";
+    var ayurDoctorURL = "{% url 'ayurdoctor' %}";
+    var ayurMartURL = "{% url 'ayurmart' %}";
+    var dModelURL = "{% url 'dmodel' %}";
+const links = [
+    { text: 'Home', url: homepageURL, color: '#1d2f4e' },
+    { text: 'Analyse Problem', url: inputPageURL, color: '#1d2f4e' },
+    { text: 'Consult a doctor', url: ayurDoctorURL, color: '#1d2f4e' },
+    { text: 'Ayurmart', url: ayurMartURL, color: '#1d2f4e' },
+    { text: '3D Model', url: dModelURL, color: '#1d2f4e' }
+]; </script>
 {% endblock %}

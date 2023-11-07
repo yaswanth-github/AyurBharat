@@ -13,49 +13,12 @@
 
 {% block body %}
 <script src="{% static 'js/inputpage.js' %}"></script>
-    <script src="{% static 'js/loginSignup.js' %}"></script>
-    <!-- navbar -->
-    <nav class="navbar navbar-expand-lg" style="background-color: #F8F8F8;">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="/">
-                <img src="https://live.staticflickr.com/65535/53217076980_d733d6cd73_w.jpg" width="50" height="50">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-    
-            <div class="collapse navbar-collapse justify-content-end align-items-center" id="navbarContent">
-                <ul class="navbar-nav fw-bold align-right">
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'homepage' %}" style="color: #1d2f4e;">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'ayurdoctor' %}" style="color: #1d2f4e;">Consult a doctor</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'ayurmart' %}" style="color: #1d2f4e;">Ayurmart</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <i class="fa-solid fa-user " id="user-icon" style="color: #1d2f4e;"></i>
-                        <div class="dropdown-content">
-                            <!-- Dropdown menu items go here -->
-                            <a class="nav-link open-login-button" onclick="openLoginForm()" style="color: #1d2f4e;">Log<span style="color: MediumSeaGreen;">in</span></a>
-                            <a class="nav-link open-signup-button" onclick="openSignupForm()" style="color: #1d2f4e;">Sign<span style="color: MediumSeaGreen;">up</span></a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    
 
 
-
+    <div id="app"></div>
     <!-- input section-->
     <div class="banner-section-bg-container d-flex justify-content-center flex-column mb-4">
-       
-
-        <div class="container">
+       <div class="container">
             <form class="subscribeForm" id="subscribeForm" method='POST' action="{% url 'outputpage' %}">
                 {% csrf_token %}
                 <h1 class="form-heading">Know your disease</h1>
@@ -120,7 +83,17 @@
 
         </div>
     </div>
- 
+    <script>
+        var homepageURL = "{% url 'homepage' %}";
+        var ayurDoctorURL = "{% url 'ayurdoctor' %}";
+        var ayurMartURL = "{% url 'ayurmart' %}";
+        var dModelURL = "{% url 'dmodel' %}";
+const links = [
+        { text: 'Home', url: homepageURL, color: '#1d2f4e' },
+        { text: 'Consult a doctor', url: ayurDoctorURL, color: '#1d2f4e' },
+        { text: 'Ayurmart', url: ayurMartURL, color: '#1d2f4e' },
+        { text: '3D Model', url: dModelURL, color: '#1d2f4e' }
+    ]; </script>
 
 
 

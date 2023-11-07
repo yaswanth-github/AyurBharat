@@ -45,3 +45,29 @@
     margin-top: 10px;
     background-color: #959ead;
 }
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+}
+.navbar-toggler {
+    order: -1;
+}
+.nav-item {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+#search-icon,
+#user-icon,
+#cart-icon
+ {
+    font-size: 20px;
+    margin-right: 5px;
+}
+
+.align-right {
+    margin-left: auto;
+}
+
+

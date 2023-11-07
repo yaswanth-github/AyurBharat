@@ -24,6 +24,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('landingpage.urls')),  # Include the landingpage app's URLs
     path('accounts/', include('accounts.urls')),
+    
     path('output/', include('output.urls')),
     path('marketplace/', include('marketplace.urls')),
     # Add other app URLs as needed

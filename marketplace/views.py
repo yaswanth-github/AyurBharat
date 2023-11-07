@@ -1,6 +1,8 @@
 from django.shortcuts import render
 
 # Create your views here.
+
+
 def ayurmart(request):
     return render(request, 'ayurMart.html')
 

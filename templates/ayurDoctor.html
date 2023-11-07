@@ -4,8 +4,6 @@
 {% block head %}
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{% static 'css/ayurDoctor.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/dropDown.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/loginSignup.css' %}">
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://app.wotnot.io/chat-widget/7aShk3YYCcWF173117878006Ky5zIFVu.js" defer></script>
@@ -19,43 +17,8 @@
 <script src="{% static 'js/ayurDoctor.js' %}"></script> 
 
 <!-- navbar -->
-<nav class="navbar navbar-expand-lg">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="/">
-            <img src="https://live.staticflickr.com/65535/53217076980_d733d6cd73_w.jpg" width="50" height="50">
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+<div id="app"></div>
 
-
-        <div class="collapse navbar-collapse justify-content-end" id="navbarContent">
-            <ul class="navbar-nav fw-bold">
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'homepage' %}" style="color: #1d2f4e;" >Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'inputpage' %}"  style="color: #1d2f4e;">Analyse Problem</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'ayurmart' %}" style="color: #1d2f4e;">AyurMart</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'dmodel' %}" style="color: #1d2f4e;">3D Model</a> <!--need to link 3D model page here-->
-                </li>
-                <li class="dropdown">
-                    <img src="https://live.staticflickr.com/65535/53283340452_0c10341374.jpg" alt="Image" width="50" height="50" id="image-trigger">
-                    <div class="dropdown-content">
-                        <!-- Dropdown menu items go here -->
-                        <a class="nav-link open-login-button" onclick="openLoginForm()">Log<span style="color: MediumSeaGreen;">in</span></a>
-                        <a class="nav-link open-signup-button" onclick="openSignupForm()">Sign<span style="color: MediumSeaGreen;">up</span></a>
-
-                </div>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
 
 <div class="under-construction-container text-center">
     <div class="message">
@@ -152,5 +115,18 @@
     </div>
 </div>
 
+<script>
+    var homepageURL = "{% url 'homepage' %}";
+    var inputPageURL = "{% url 'inputpage' %}";
+
+    var ayurMartURL = "{% url 'ayurmart' %}";
+    var dModelURL = "{% url 'dmodel' %}";
+const links = [
+    { text: 'Home', url: homepageURL, color: '#1d2f4e' },
+    { text: 'Analyse Problem', url: inputPageURL, color: '#1d2f4e' },
+
+    { text: 'Ayurmart', url: ayurMartURL, color: '#1d2f4e' },
+    { text: '3D Model', url: dModelURL, color: '#1d2f4e' }
+]; </script>
 
 {% endblock %}

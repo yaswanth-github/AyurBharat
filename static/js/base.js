@@ -112,7 +112,7 @@ function opensignuppopup(){
     signupButton.textContent = 'Signup';
 
     const openLoginButton = document.createElement('button');
-    openLoginButton.className = 'open-login-button';
+    openLoginButton.className = 'btn btn-primary';
     openLoginButton.textContent = 'Open Login Form';
     openLoginButton.onclick = openLoginForm;
 
@@ -167,6 +167,33 @@ function opensignuppopup(){
 
     // Append the signup popup to the document body
     document.body.appendChild(signupPopup);
+}
+
+function updateDropdownContent() {
+    const dropdownContent = document.querySelector('.dropdown-content');
+    dropdownContent.innerHTML = ''; // Clear existing content
+
+    // Create new links for the dropdown
+    const yourAccountLink = document.createElement('a');
+    yourAccountLink.className = 'nav-link';
+    yourAccountLink.href = '#'; // Add the appropriate URL
+    yourAccountLink.style.color = '#1d2f4e';
+    yourAccountLink.textContent = 'Your Account';
+
+    const yourOrdersLink = document.createElement('a');
+    yourOrdersLink.className = 'nav-link';
+    yourOrdersLink.href = '#'; // Add the appropriate URL
+    yourOrdersLink.style.color = '#1d2f4e';
+    yourOrdersLink.textContent = 'Your Orders';
+
+    // Append the new links to the dropdown content
+    dropdownContent.appendChild(yourAccountLink);
+    dropdownContent.appendChild(yourOrdersLink);
+}
+
+function hideUserDropdown() {
+    const dropdownContent = document.querySelector('.dropdown-content');
+    dropdownContent.style.display = 'none';
 }
 
 function createLoginPopup() {
@@ -262,11 +289,14 @@ function createLoginPopup() {
     const loginButton = document.createElement('button');
     loginButton.className = 'btn btn-primary';
     loginButton.textContent = 'Login';
+    
 
     const openSignupButton = document.createElement('button');
-    openSignupButton.className = 'open-signup-button';
+    openSignupButton.className = 'btn btn-primary';  
     openSignupButton.textContent = 'Open Signup Form';
     openSignupButton.onclick = openSignupForm;
+
+    
 
     const forgotPasswordLink = document.createElement('a');
     forgotPasswordLink.href = '';
@@ -356,15 +386,41 @@ function validateLoginForm() {
             const email = document.getElementById('loginEmail').value;
             const password = document.getElementById('loginPassword').value;
             const emailError = document.getElementById('loginEmailError');
-
+            const loginSuccessful = true; // Replace with your actual login logic
+        
             if (!email || !password) {
                 emailError.textContent = 'Please fill in all fields.';
                 return false;
             } else {
                 emailError.textContent = '';
             }
-
-            return validateEmail(email, emailError);
+        
+            if (!validateEmail(email, emailError)) {
+                return false;
+            }
+        
+            if (password.length < 6) {
+                document.getElementById('loginPasswordError').textContent = 'Password must be at least 6 characters long.';
+                return false;
+            } else {
+                document.getElementById('loginPasswordError').textContent = '';
+            }
+        
+            // Assuming login is successful
+            if (email=="pasumarthykomal2gmail.com" &&  password=="123456789") {
+                // Update the dropdown content
+                updateDropdownContent();
+        
+                // Hide the user dropdown
+                hideUserDropdown();
+        
+                // Add any other actions you want to perform after successful login
+        
+                // Close the login form
+                closeLoginForm();
+            }
+        
+            return true; // Return true if the form is valid
         }
 
 function validateSignupForm() {
@@ -397,3 +453,135 @@ function validateSignupForm() {
         }
 
 
+// Create the navbar element
+const navbar = document.createElement('nav');
+navbar.className = 'navbar navbar-expand-lg';
+navbar.style.backgroundColor = '#F8F8F8';
+
+// Create the container
+const container = document.createElement('div');
+container.className = 'container-fluid';
+navbar.appendChild(container);
+
+// Create the brand link with image
+const brandLink = document.createElement('a');
+brandLink.className = 'navbar-brand';
+brandLink.href = '/';
+container.appendChild(brandLink);
+
+const brandImage = document.createElement('img');
+brandImage.src = 'https://live.staticflickr.com/65535/53217076980_d733d6cd73_w.jpg';
+brandImage.width = '50';
+brandImage.height = '50';
+brandLink.appendChild(brandImage);
+
+// Create the toggler button
+const togglerButton = document.createElement('button');
+togglerButton.className = 'navbar-toggler';
+togglerButton.type = 'button';
+togglerButton.setAttribute('data-bs-toggle', 'collapse');
+togglerButton.setAttribute('data-bs-target', '#navbarContent');
+togglerButton.setAttribute('aria-controls', 'navbarContent');
+togglerButton.setAttribute('aria-expanded', 'false');
+togglerButton.setAttribute('aria-label', 'Toggle navigation');
+container.appendChild(togglerButton);
+
+const togglerIcon = document.createElement('span');
+togglerIcon.className = 'navbar-toggler-icon';
+togglerButton.appendChild(togglerIcon);
+
+// Create the navbar content
+const navbarContent = document.createElement('div');
+navbarContent.className = 'collapse navbar-collapse justify-content-end';
+navbarContent.id = 'navbarContent';
+container.appendChild(navbarContent);
+
+// Create the list of links
+const navList = document.createElement('ul');
+navList.className = 'navbar-nav fw-bold';
+navbarContent.appendChild(navList);
+
+
+
+
+links.forEach(linkInfo => {
+    const listItem = document.createElement('li');
+    listItem.className = 'nav-item';
+    navList.appendChild(listItem);
+
+    const link = document.createElement('a');
+    link.className = 'nav-link';
+    link.href = linkInfo.url;
+    link.style.color = linkInfo.color;
+    link.textContent = linkInfo.text;
+    listItem.appendChild(link);
+});
+
+// Create the user icon and dropdown
+const userIcon = document.createElement('i');
+userIcon.className = 'fa-solid fa-user';
+userIcon.id = 'user-icon';
+userIcon.style.color = '#1d2f4e';
+userIcon.style.margin="auto";
+
+
+navList.appendChild(userIcon);
+
+const dropdownContent = document.createElement('div');
+dropdownContent.className = 'dropdown-content';
+userIcon.appendChild(dropdownContent);
+
+// Apply CSS properties to the dropdown content
+dropdownContent.style.display = 'none';
+dropdownContent.style.position = 'absolute';
+dropdownContent.style.backgroundColor = '#f9f9f9';
+dropdownContent.style.minWidth = '140px';
+dropdownContent.style.boxShadow = '0px 8px 16px 0px rgba(0,0,0,0.2)';
+dropdownContent.style.zIndex = '1';
+
+
+// Show dropdown on mouseover
+userIcon.addEventListener('mouseover', function() {
+    dropdownContent.style.display = 'block';
+    dropdownContent.style.right = '0'; // Adjust the value as needed
+    dropdownContent.style.top = '75';
+});
+
+// Hide dropdown on mouseout
+userIcon.addEventListener('mouseout', function() {
+    dropdownContent.style.display = 'none';
+});
+
+
+
+// Change font for login and signup links
+
+
+// Create login and signup links in the dropdown
+const loginLink = document.createElement('a');
+loginLink.className = 'nav-link open-login-button';
+loginLink.style.color = '#1d2f4e';
+loginLink.style.fontFamily="Roboto";
+loginLink.textContent = 'Log';
+loginLink.onclick = openLoginForm; // Assuming openLoginForm is a function
+const logInSpan = document.createElement('span');
+logInSpan.style.color = 'MediumSeaGreen';
+logInSpan.textContent = 'in';
+loginLink.appendChild(logInSpan);
+dropdownContent.appendChild(loginLink);
+
+const signupLink = document.createElement('a');
+signupLink.className = 'nav-link open-signup-button';
+signupLink.style.fontFamily="Roboto";
+signupLink.style.color = '#1d2f4e';
+signupLink.textContent = 'Sign';
+signupLink.onclick = openSignupForm; // Assuming openSignupForm is a function
+const signUpSpan = document.createElement('span');
+signUpSpan.style.color = 'MediumSeaGreen';
+signUpSpan.textContent = 'up';
+signupLink.appendChild(signUpSpan);
+dropdownContent.appendChild(signupLink);
+
+// Append the navbar to the document
+const app = document.getElementById('app');
+app.appendChild(navbar);
