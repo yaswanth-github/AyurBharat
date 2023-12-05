@@ -5,6 +5,7 @@ import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.ensemble import RandomForestClassifier
 from nltk.corpus import stopwords
+import nltk
 import json
 
 # Construct the absolute file path using the STATIC_ROOT setting
@@ -14,6 +15,7 @@ csv_file_path = os.path.join('static', 'csv_files', 'AyurBharat_DataSet.csv')
 data = pd.read_csv(csv_file_path)
 
 # Preprocess text data
+nltk.download('stopwords')
 stop_words = set(stopwords.words('english'))
 
 def preprocess_text(text):
