@@ -34,10 +34,10 @@
     font-weight: 300;
 }
 
-
 .custom-outline-button {
     color: white;   
     background-color: transparent;
+    backdrop-filter: blur(3px);
     width: 130px;
     height: 45px;
     border-style: solid;
@@ -46,18 +46,12 @@
     border-radius: 8px;
 }
 
-
 .project-heading {
     flex: none;
     height: auto;
     position: relative;
     width: 100%;
 }
-
-
-
-
-
 
 .main-heading-text {
     flex: none;
@@ -129,6 +123,6 @@
 /* Scale the elements and change the background color on hover */
 .hover-effect:hover {
     transform: scale(1.05);
-    background-color: #f8f8f8; /* Change the background color on hover (adjust as needed) */
+    /* Change the background color on hover (adjust as needed) */
 }
 

@@ -144,6 +144,7 @@
 .custom-outline-button1 {
     color: black;
     background-color: transparent;
+    backdrop-filter: blur(3px);
     width: 110px;
     height: 45px;
     border-style: solid;
