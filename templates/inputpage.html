@@ -12,74 +12,127 @@
 {% endblock %}
 
 {% block body %}
-<script src="{% static 'js/inputpage.js' %}"></script>
+
 
 
     <div id="app"></div>
     <!-- input section-->
     <div class="banner-section-bg-container d-flex justify-content-center flex-column mb-4">
        <div class="container">
-            <form class="subscribeForm" id="subscribeForm" method='POST' action="{% url 'outputpage' %}">
-                {% csrf_token %}
-                <h1 class="form-heading">Know your disease</h1>
-                <!-- <p>Predictions: {{ predictions }}</p> -->
-                <div class="mb-3">
-                    <h1 class="labelText">Checkup for</h1>
-                    <div class="d-flex flex-column">
-                    <div>
-                        <input type="radio" name="person" id="myself" value="myself" checked />
-                    <label for="myself">Myself</label>
+        <div id="formSteps" class="button-container">
+            <!-- Step 1 -->
+            <div class="step active" id="step1">
+                <form class="subscribeForm" id="subscribeForm" method='POST' action="{% url 'outputpage' %}">
+                    {% csrf_token %}
+                    <h1 class="form-heading">Know your disease</h1>
+        
+                    <div class="mb-3">
+                        <h1 class="labelText">Checkup for</h1>
+                        <div class="d-flex flex-column">
+                            <div>
+                                <input type="radio" name="person" id="myself" value="myself" checked />
+                                <label for="myself">Myself</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="person" id="SomeoneElse" value="SomeoneElse" class="ml-2" />
+                                <label for="SomeoneElse">Someone Else</label>
+                            </div>
+                        </div>
                     </div>
-                    <div>
-                        <input type="radio" name="person" id="SomeoneElse" value="SomeoneElse" class="ml-2"/>
-                    <label for="SomeoneElse">Someone Else</label>
+                </form>
+            </div>
+        
+            <!-- Step 2 -->
+            <div class="step" id="step2">
+                <form class="subscribeForm" id="subscribeForm" method='POST' action="{% url 'outputpage' %}">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="name" class="labelText">Your Name</label>
+                        <input type="text" class="form-control" id="name" name='name' required/>
+                        <p class="errorMsg" id="nameErrMsg"></p>
                     </div>
-                </div>
-                    
-                  </div>
-                <div class="mb-3">
-                    <label for="name" class="labelText">Your Name</label>
-                    <input type="text" class="form-control" id="name" name='name' required/>
-                    <p class="errorMsg" id="nameErrMsg"></p>
-                </div>
-                <div class="mb-3">
-                    <label for="age" class="labelText">Age</label>
-                    <input type="number" class="form-control" id="age" name='age' required/>
-                    <p class="errorMsg" id="ageErrMsg"></p>
-                </div>
-                <div class="mb-3">
-                    <h1 class="labelText">Gender</h1>
-                    <input type="radio" name="gender" id="genderMale" value="Male" checked required />
-                    <label for="genderMale">Male</label>
-                    <input type="radio" name="gender" id="genderFemale" value="Female" class="ml-2" />
-                    <label for="genderFemale">Female</label>
-                    <input type="radio" name="gender" id="genderOther" value="Other"/>
-                    <label for="genderOther">Other</label>
-                </div>
-                <div class="mb-3">
-                    <label for="status">Region</label>
-                    <select id="status" class="form-control" name='region' required>
-                        <option value="select" name='region' disabled selected>Select Region</option>
-                        <option value="Africa" name='Africa'>Africa</option>
-                        <option value="America" name='America'>America</option>
-                        <option value="Asia" name='Asia'>Asia</option>
-                        <option value="Europe" name='Europe'>Europe</option>
-                        <option value="Oceania" name='Oceania'>Oceania</option>
-                    </select>
-                </div>
-                <div class="mb-3">
-                    <label for="disease" class="labelText">Disease</label>
-                    <input type="text" class="form-control" id="disease" />
-                    <p class="errorMsg" id="diseaseErrMsg"></p>
-                </div>
-                <div class="mb-3">
-                    <label for="symptoms" class="labelText">Symptoms <span class="small">(* use commas for multiple symptoms)</span></label>
-                    <input type="text" class="form-control" id="symptoms" name='symptoms' required />
-                    <p class="errorMsg" id="symptomsErrMsg"></p>
-                </div>
+                </form>
+            </div>
+        
+            <!-- Step 3 -->
+            <div class="step" id="step3">
+                <form class="subscribeForm" id="subscribeForm" method='POST' action="{% url 'outputpage' %}">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="age" class="labelText">Age: <output id="value"></output></label>
+                        <input type="range" min="2" max="90" value="1" class="form-control" id="age" name='age' step="1" required/>
+                        
+                        <p class="errorMsg" id="ageErrMsg"></p>
+                    </div>
+                </form>
+            </div>
+        
+            <!-- Step 4 -->
+            <div class="step" id="step4">
+                <form class="subscribeForm" id="subscribeForm" method='POST' action="{% url 'outputpage' %}">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <h1 class="labelText">Gender</h1>
+                        <input type="radio" name="gender" id="genderMale" value="Male" checked required />
+                        <label for="genderMale">Male</label>
+                        <input type="radio" name="gender" id="genderFemale" value="Female" class="ml-2" />
+                        <label for="genderFemale">Female</label>
+                        <input type="radio" name="gender" id="genderOther" value="Other"/>
+                        <label for="genderOther">Other</label>
+                    </div>
+                </form>
+            </div>
+        
+            <!-- Step 5 -->
+            <div class="step" id="step5">
+                <form class="subscribeForm" id="subscribeForm" method='POST' action="{% url 'outputpage' %}">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="status">Region</label>
+                        <select id="status" class="form-control" name='region' required>
+                            <option value="select" name='region' disabled selected>Select Region</option>
+                            <option value="Africa" name='Africa'>Africa</option>
+                            <option value="America" name='America'>America</option>
+                            <option value="Asia" name='Asia'>Asia</option>
+                            <option value="Europe" name='Europe'>Europe</option>
+                            <option value="Oceania" name='Oceania'>Oceania</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+        
+            <!-- Step 6 -->
+            <div class="step" id="step6">
+                <form class="subscribeForm" id="subscribeForm" method='POST' action="{% url 'outputpage' %}">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="disease" class="labelText">Disease (if you know)</label>
+                        <input type="text" class="form-control" id="disease" />
+                        <p class="errorMsg" id="diseaseErrMsg"></p>
+                    </div>
+                </form>
+            </div>
+        
+            <!-- Step 7 -->
+            <div class="step" id="step7">
+                <form class="subscribeForm" id="subscribeForm" method='POST' action="{% url 'outputpage' %}">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="symptoms" class="labelText">Symptoms <span class="small">(* use commas for multiple symptoms)</span></label>
+                        <input type="text" class="form-control" id="symptoms" name='symptoms' required />
+                        <p class="errorMsg" id="symptomsErrMsg"></p>
+                    </div>
+                    <button type='submit' class="btn btn-primary" id="SubmitBtn">Submit</button>
+                </form>
+            </div>
+        
+            <div class="d-flex justify-content-between">
+                <button id="nextBtn" class="custom-outline-button1" onclick="nextStep()">Next</button>
+                <button id="prevBtn" class="custom-outline-button1" onclick="prevStep()">Previous</button>
+            </div>
+        </div>
+        
 
-                <button type='submit' class="btn btn-primary" id="SubmitBtn">Submit</button>
-            </form>
 
         </div>
     </div>
@@ -93,7 +146,10 @@ const links = [
         { text: 'Consult a doctor', url: ayurDoctorURL, color: '#1d2f4e' },
         { text: 'Ayurmart', url: ayurMartURL, color: '#1d2f4e' },
         { text: '3D Model', url: dModelURL, color: '#1d2f4e' }
-    ]; </script>
+    ]; 
+
+</script>
+<script src="{% static 'js/inputpage.js' %}"></script>
 
 
 

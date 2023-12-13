@@ -94,8 +94,7 @@
 
 .labelText {
     font-family: Roboto;
-    font-size: 14px;
-    color: grey;
+    font-size: 20px;
     font-weight: bold;
 }
 
@@ -130,5 +129,36 @@
     margin-right: 5px;
 }
 
+
+
+.step {
+    display: none;
+}
+
+.step.active {
+    display: block;
+}
+
+
+
+.custom-outline-button1 {
+    color: black;
+    background-color: transparent;
+    width: 110px;
+    height: 45px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    border-radius: 8px;
+    margin-right: 10px;
+}
+
+.button-container {
+    background-color: white; /* Or set any other desired background color */
+    padding: 20px; /* Adjust padding as needed */
+    margin-top: 20px; /* Adjust margin if needed */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Adding a subtle shadow */
+}
 
 
