@@ -14,7 +14,7 @@
     position: fixed;
     top: 10%;    /* Center vertically */
    /* Center horizontally */
-    
+    backdrop-filter: blur(3px);
     background: transparent;
  
 
@@ -27,6 +27,7 @@
     margin: 0 auto;
     padding: 20px;
     background-color: white;
+    
 }
 
 .login-popup input,
@@ -89,6 +90,7 @@ height: 100vh;
     padding: 30px;
     border-radius: 20px;
     background-color: white;
+
 }
 
 .footer {

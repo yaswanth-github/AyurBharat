@@ -5,49 +5,11 @@
     background-image: URL("https://live.staticflickr.com/65535/53216717231_923f1abb0e_b.jpg");
     background-size: cover;
     padding: 40px;
+    height: 70vh;
 }
-
-.banner-heading {
-    color: white;
-    font-family: "Roboto";
-    font-size: 60px;
-    font-weight: 300;
+.bgCont{
+    min-height: 65vh;
 }
-
-.banner-caption {
-    color: #f5f7fa;
-    font-family: "Roboto";
-    font-size: 24px;
-    font-weight: 300;
-}
-
-.project-heading {
-    flex: none;
-    height: auto;
-    position: relative;
-    width: 100%;
-}
-
-.heading {
-    color: white;
-    background-repeat: no-repeat;
-    background-position: 0% 0%;
-    background-clip: text;
-    -webkit-background-clip: text;
-    font-size: 80px;
-    font-family: Outfit, sans-serif;
-    font-style: normal;
-    font-weight: 900;
-    text-align: left;
-    letter-spacing: 0px;
-    white-space: normal;
-    line-height: 1;
-    margin: 0px;
-    padding: 0px 0px 10px;
-}
-
-
-
 
 .main-heading-text {
     flex: none;
@@ -85,17 +47,10 @@
     width: 650px;
 }
 
-.subscribeForm {
-    background-color: white;
-    border-radius: 10px;
-    padding: 35px;
-
-}
-
 .labelText {
-    font-family: Roboto;
-    font-size: 20px;
-    font-weight: bold;
+    font-family: Montserrat;
+    font-size: 25px;
+
 }
 
 .errorMsg {
@@ -130,7 +85,6 @@
 }
 
 
-
 .step {
     display: none;
 }
@@ -138,8 +92,6 @@
 .step.active {
     display: block;
 }
-
-
 
 .custom-outline-button1 {
     color: black;
@@ -156,10 +108,15 @@
 
 .button-container {
     background-color: white; /* Or set any other desired background color */
-    padding: 20px; /* Adjust padding as needed */
-    margin-top: 20px; /* Adjust margin if needed */
+    padding: 50px;
+    margin-top: 20px; 
     border-radius: 8px; /* Rounded corners */
+    min-width: 50vw;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Adding a subtle shadow */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
 }
 
 
