@@ -121,4 +121,20 @@
 }
 
 
+/* swiper*/
+.swiper {
+    width: 600px;
+    height: 300px;
+  }
+
+.custom-outline-button-dark{
+    color: #19232d;   
+    background-color: transparent;
+    backdrop-filter: blur(3px);
+
+    border-style: solid;
+    min-width: 10vw;
+    border-color:#19232d;
+    
+  }
 

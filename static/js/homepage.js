@@ -1,74 +1,94 @@
-function createProductCard(product) {
-    const productId = "productId_" + product.productName.replace(/\s+/g, ''); 
+let swiperWrapper=document.getElementsByClassName("swiper-wrapper");
 
-    const productContainer = document.createElement("div");
+function createProductCard(product) {
+    let productId = "productId_" + product.productName.replace(/\s+/g, ''); // Generate productId based on product name
+    
+    let swiperSlide=document.createElement("div");
+    swiperSlide.classList="swiper-slide";
+
+    // Create the main container div
+    let productContainer = document.createElement("div");
     productContainer.id = "productContainer_" + productId;
     productContainer.classList = "mb-4 col-12 col-sm-7 col-md-3";
 
-    const cardDiv = document.createElement("div");
+    // Create the shadow card div
+    let cardDiv = document.createElement("div");
     cardDiv.id = "cardDiv_" + productId;
     cardDiv.className = "shadow card";
 
-    const productImage = document.createElement("img");
+    // Create the image element
+    let productImage = document.createElement("img");
     productImage.id = "productImage_" + productId;
-    productImage.src = product.imageUrl || "https://d1tgh8fmlzexmh.cloudfront.net/ccbp-responsive-website/ecommerce-trending-blogs-1-img.png";
+    productImage.src = product.imageUrl || "https://d1tgh8fmlzexmh.cloudfront.net/ccbp-responsive-website/ecommerce-trending-blogs-1-img.png"; // Use a default image URL if no imageUrl is provided
     productImage.className = "hover-effect card-image";
 
-    const cardContentDiv = document.createElement("div");
+    // Create the div for card content
+    let cardContentDiv = document.createElement("div");
     cardContentDiv.id = "cardContentDiv_" + productId;
     cardContentDiv.className = "p-2";
 
-    const mainHeading = document.createElement("h1");
+    // Create the main heading
+    let mainHeading = document.createElement("h1");
     mainHeading.id = "mainHeading_" + productId;
     mainHeading.className = "main-heading card-heading";
     mainHeading.textContent = product.productName;
 
-    const descriptionLink = document.createElement("p");
+    // Create the product description link
+    let descriptionLink = document.createElement("p");
     descriptionLink.id = "descriptionLink_" + productId;
     descriptionLink.className = "card-paragraph card-special-paragraph";
-    descriptionLink.textContent = product.productDesc;
-    descriptionLink.style.maxHeight = "4em";
-    descriptionLink.style.overflow = "hidden";
-    descriptionLink.style.textOverflow = "ellipsis";
+    descriptionLink.textContent = product.productDesc; // Add the full product description here
+    descriptionLink.style.maxHeight = "4em"; // Set a maximum height for the product description (3 lines)
+    descriptionLink.style.overflow = "hidden"; // Hide any overflowing text
+    descriptionLink.style.textOverflow = "ellipsis"; // Show ellipsis (...) when text overflows
 
-    const mrpParagraph = document.createElement("p");
+    // Create the MRP paragraph
+    let mrpParagraph = document.createElement("p");
     mrpParagraph.id = "mrpParagraph_" + productId;
     mrpParagraph.className = "card-paragraph mrp-paragraph mt-4";
-    mrpParagraph.innerHTML = `<span>MRP: <i class="fa-solid fa-indian-rupee-sign"></i> ${product.productPrice}</span>`;
+    mrpParagraph.innerHTML = '<span>MRP: <i class="fa-solid fa-indian-rupee-sign"></i> ' + product.productPrice + '</span>';
 
-    const quantityButtonsDiv = document.createElement("div");
+    // Create the quantity control and buttons div
+    let quantityButtonsDiv = document.createElement("div");
     quantityButtonsDiv.id = "quantityButtonsDiv_" + productId;
     quantityButtonsDiv.className = "d-flex flex-row mb-3";
 
-    const quantityControlDiv = document.createElement("div");
+    // Create the quantity control div
+    let quantityControlDiv = document.createElement("div");
     quantityControlDiv.id = "quantityControlDiv_" + productId;
     quantityControlDiv.className = "quantity-control custom-outline-button1";
 
-    const minusButton = document.createElement("button");
+    // Create the minus button
+    let minusButton = document.createElement("button");
     minusButton.id = "minusButton_" + productId;
     minusButton.className = "quantity-button minus";
     minusButton.textContent = "-";
 
-    const quantitySpan = document.createElement("span");
+    // Create the quantity span
+    let quantitySpan = document.createElement("span");
     quantitySpan.id = "quantitySpan_" + productId;
     quantitySpan.className = "quantity";
     quantitySpan.textContent = "0";
 
-    const plusButton = document.createElement("button");
+    // Create the plus button for quantity control
+    let plusButton = document.createElement("button");
     plusButton.id = "plusButton_" + productId;
     plusButton.className = "quantity-button plus align-right";
     plusButton.textContent = "+";
 
-    const addToCartButton = document.createElement("button");
+    // Create the "Add to cart" button
+    let addToCartButton = document.createElement("button");
     addToCartButton.id = "addToCartButton_" + productId;
     addToCartButton.className = "custom-outline-button1 hover-effect";
     addToCartButton.textContent = "Add to cart";
 
-    const buyNowButton = document.createElement("button");
+    // Create the "Buy Now" button
+    let buyNowButton = document.createElement("button");
     buyNowButton.id = "buyNowButton_" + productId;
     buyNowButton.className = "custom-outline-button1 align-right hover-effect";
     buyNowButton.textContent = "Buy Now";
 
+    // Append elements to construct the HTML structure
     quantityControlDiv.appendChild(minusButton);
     quantityControlDiv.appendChild(quantitySpan);
     quantityControlDiv.appendChild(plusButton);
@@ -87,12 +107,14 @@ function createProductCard(product) {
 
     productContainer.appendChild(cardDiv);
 
-    return productContainer;
+    // Append the main container to the document body
+    swiperSlide.appendChild(productContainer);
+    swiperSlide.appendChild(swiperSlide);
 
-    const quantityDisplay = document.getElementById(`quantitySpan_${productId}`);
-    const plusButton1 = document.getElementById(`plusButton_${productId}`);
-    const minusButton1 = document.getElementById(`minusButton_${productId}`);
-    const addToCartButton1 = document.getElementById(`addToCartButton_${productId}`);
+    let quantityDisplay = document.getElementById(`quantitySpan_${productId}`);
+    let plusButton1 = document.getElementById(`plusButton_${productId}`);
+    let minusButton1 = document.getElementById(`minusButton_${productId}`);
+    let addToCartButton1 = document.getElementById(`addToCartButton_${productId}`);
     let quantity = 0;
 
     function updateQuantity() {
@@ -124,11 +146,6 @@ function createProductCard(product) {
     });
 }
 
-
-
-const carouselInner = document.getElementById("carouselIndicators"); // Get the carousel inner container
-
-// Sample product data
 let products = [
     {
         productName: "Pushyanuga Churna",
@@ -194,16 +211,28 @@ let products = [
 ];
 
 
+for (let product of products){
+    createProductCard(product);
+}
 
-
-products.forEach((product) => {
-    const productCard = createProductCard(product); // Create product card
-    const carouselItem = document.createElement("div"); // Create a carousel item
-    carouselItem.className = "carousel-item"; // Set carousel item class
-
-    carouselItem.appendChild(productCard); // Append product card to the carousel item
-    carouselInner.appendChild(carouselItem); // Append carousel item to the carousel inner container
-});
-
-
-
+const swiper = new Swiper('.swiper', {
+    // Optional parameters
+    direction: 'vertical',
+    loop: true,
+  
+    // If we need pagination
+    pagination: {
+      el: '.swiper-pagination',
+    },
+  
+    // Navigation arrows
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  
+    // And if we need scrollbar
+    scrollbar: {
+      el: '.swiper-scrollbar',
+    },
+  });
