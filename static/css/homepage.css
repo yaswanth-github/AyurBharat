@@ -1,24 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap');
 
 
+
 .banner-section-bg-container {
-    background-image: URL("https://live.staticflickr.com/65535/53216717231_923f1abb0e_b.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),URL("https://live.staticflickr.com/65535/53216717231_923f1abb0e_b.jpg");
     background-size: cover;
-    height: 70vh;
-}
 
-.banner-section-bg-container2 {
-    background-image: URL("https://https://live.staticflickr.com/65535/53292166389_9ea0dfbd2c_h.jpg");
-    background-size: cover;
+    backdrop-filter: blur(1px);
     height: 70vh;
-}
-.banner-section-bg-container3 {
-    background-image: URL("https://live.staticflickr.com/65535/53291793286_c9a74b43b8_h.jpg");
-    background-size: cover;
-    height: 70vh;
-}
 
 
+}
 
 .banner-heading {
     color: white;
@@ -30,7 +22,6 @@
 .banner-caption {
     color: #f5f7fa;
     font-family: "Roboto";
-    font-size: 24px;
     font-weight: 300;
 }
 
@@ -38,12 +29,11 @@
     color: white;   
     background-color: transparent;
     backdrop-filter: blur(3px);
-    width: 130px;
-    height: 45px;
+
     border-style: solid;
-    border-width: 1px;
+    min-width: 10vw;
     border-color: white;
-    border-radius: 8px;
+ 
 }
 
 .project-heading {
@@ -73,6 +63,10 @@
 
 .wcu-section {
     background-color: #f9fbfe;
+}
+
+.declaration-section{
+    background-color: #f0f3fc;
 }
 
 .wcu-section-heading {
@@ -125,4 +119,6 @@
     transform: scale(1.05);
     /* Change the background color on hover (adjust as needed) */
 }
+
+
 
