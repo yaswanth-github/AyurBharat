@@ -15,7 +15,9 @@ csv_file_path = os.path.join('static', 'csv_files', 'AyurBharat_DataSet.csv')
 data = pd.read_csv(csv_file_path)
 
 # Preprocess text data
-nltk.download('stopwords')
+
+# nltk.download('stopwords')
+
 stop_words = set(stopwords.words('english'))
 
 def preprocess_text(text):
