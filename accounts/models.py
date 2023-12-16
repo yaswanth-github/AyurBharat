@@ -7,7 +7,7 @@ class UserManager(BaseUserManager):
             raise ValueError('Users must have an email address')
         if not username:
             raise ValueError('Users must have a username')
-        user = Users(email=self.normalize_email(email), username=username)
+        user = User(email=self.normalize_email(email), username=username)
         user.set_password(password)
         user.save(using=self._db)
         return user
@@ -19,7 +19,7 @@ class UserManager(BaseUserManager):
         user.save(using=self._db)
         return user
 
-class Users(AbstractBaseUser):
+class User(AbstractBaseUser):
     user_name = models.CharField(max_length=255, unique=True)
     user_email = models.EmailField(max_length=255, unique=True)
     user_phone_no = models.CharField(max_length=20, blank=True, unique=True)
@@ -27,7 +27,7 @@ class Users(AbstractBaseUser):
     user_type = models.CharField(max_length=10)
     user_created_datetime = models.DateTimeField(auto_now_add=True)
 
-    USERNAME_FIELD = 'user_email'
+    USERNAME_FIELD = 'user_name'
     REQUIRED_FIELDS = ['user_name']
 
     objects = UserManager()

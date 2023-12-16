@@ -2,15 +2,15 @@
 
 from django.shortcuts import render, redirect
 from django.contrib.auth.hashers import make_password, check_password
-from .models import Users
+from .models import User
 
 def user_login(request):
     if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
 
-        if Users.objects.filter(user_name=username).exists():
-            userdata = Users.objects.filter(user_name=username)
+        if User.objects.filter(user_name=username).exists():
+            userdata = User.objects.filter(user_name=username)
 
             # Access the first element in the userdata list
             user = userdata[0]
@@ -35,10 +35,10 @@ def signup(request):
 
         hashed_pwd = make_password(user_password) # created an hash password
 
-        if (Users.objects.filter(user_name=user_name).exists() or (Users.objects.filter(user_email = user_email).exists())):
+        if (User.objects.filter(user_name=user_name).exists() or (User.objects.filter(user_email = user_email).exists())):
             return render(request, "signup.html", {'error_message':'User account already exists!'})
 
-        user = Users(user_name = user_name, user_email = user_email, user_phone_no = user_phone_no, user_password = hashed_pwd, user_type = user_type)
+        user = User(user_name = user_name, user_email = user_email, user_phone_no = user_phone_no, user_password = hashed_pwd, user_type = user_type)
         user.save() # for saving in the tables
 
         return render(request,'login.html', {'success_message':'Signedup successful!'})
