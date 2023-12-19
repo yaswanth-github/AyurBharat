@@ -27,7 +27,11 @@
     {% block head %}{% endblock %}
 </head>
 <body>
+    <div id="loader-container">
+        <div class="loader"></div>
+    </div>
     {% block body %}
+    
 
     <script>const links = [
         { text: 'Analyse Problem', url: inputPageURL, color: '#1d2f4e' },
@@ -53,12 +57,6 @@
             document.getElementById('loader-container').style.display = 'none';
         });
     </script>
-
-    <div id="loader-container">
-        <div class="loader"></div>
-    </div>
-
-
 
     <div class="pt-4 footer-container footer-text">
         <div class="container p-3 pb-1">
