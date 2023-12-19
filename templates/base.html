@@ -20,6 +20,8 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/loginSignup.css' %}">
     <!-- <link rel="stylesheet" type="text/css" href="{% static 'css/dropDown.css' %}"> -->
     <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/loader.css' %}">
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://app.wotnot.io/chat-widget/7aShk3YYCcWF173117878006Ky5zIFVu.js" defer></script>
@@ -27,19 +29,21 @@
     {% block head %}{% endblock %}
 </head>
 <body>
-    <div id="loader-container">
-        <div class="loader"></div>
-    </div>
-    {% block body %}
     
-
+    {% block body %}
     <script>const links = [
         { text: 'Analyse Problem', url: inputPageURL, color: '#1d2f4e' },
         { text: 'Consult a doctor', url: ayurDoctorURL, color: '#1d2f4e' },
         { text: 'Ayurmart', url: ayurMartURL, color: '#1d2f4e' },
         { text: '3D Model', url: dModelURL, color: '#1d2f4e' }
     ]; </script>
+
+    <!-- <div id="loader-container">
+        <div class="loader"></div>
+    </div> -->
+
     {% endblock %}
+
     <script>
         var homePageURL =  "{% url 'homepage' %}";
         var inputPageURL = "{% url 'inputpage' %}";
