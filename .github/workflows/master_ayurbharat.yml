@@ -29,7 +29,6 @@ jobs:
       
       - name: Install dependencies
         run: pip install -r requirements.txt
-      
         
       # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
 
@@ -67,4 +66,4 @@ jobs:
         with:
           app-name: 'AyurBharat'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_31E07B9AFE6449048BEBC38500D8F6F1 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_BD1002C13BCF4F9F885DE3D46F002C70 }}
