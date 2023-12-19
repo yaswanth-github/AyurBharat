@@ -24,7 +24,7 @@ class User(AbstractBaseUser):
     user_email = models.EmailField(max_length=255, unique=True)
     user_phone_no = models.CharField(max_length=20, blank=True, unique=True)
     user_password = models.CharField(max_length=255)
-    user_type = models.CharField(max_length=10)
+    user_type = models.CharField(max_length=10, default='Patient')
     user_created_datetime = models.DateTimeField(auto_now_add=True)
 
     USERNAME_FIELD = 'user_name'
