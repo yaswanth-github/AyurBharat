@@ -28,8 +28,10 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*','https://ayurbharat.onrender.com/']
 PORT = int(os.environ.get("PORT", 8000))
+CSRF_TRUSTED_ORIGINS = ["https://ayurbharat.azurewebsites.net/"]
 
 
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 # Application definition
 
 INSTALLED_APPS = [
