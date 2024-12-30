@@ -9,7 +9,7 @@ babylon@^6.18.0:
 
 babylonjs@^6.27.1:
   version "6.27.1"
-  resolved "https://registry.yarnpkg.com/babylonjs/-/babylonjs-6.27.1.tgz#f62519577b39e6ab54fbb6793dde9c5416d7dee9"
+  resolved "https://registry.npmjs.org/babylonjs/-/babylonjs-6.27.1.tgz"
   integrity sha512-25MKsEuiqMe073V5HKAUXIoQhQp9h5hDbxHcLCi/Qy9VzlJfq/XyFfu8owph3dZXXQ6+psdcCBtCa6pAURbFrA==
 
 three@^0.158.0:
